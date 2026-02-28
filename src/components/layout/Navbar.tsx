@@ -1,8 +1,12 @@
+"use client";
+
 import Link from "next/link";
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
     <nav className="fixed w-full z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,13 +39,81 @@ export default function Navbar() {
               Pedir Presupuesto
             </Link>
           </div>
-          {/* Mobile menu button (Simplified for brevity, would need state for real toggle) */}
+          {/* Mobile menu button */}
           <div className="md:hidden flex items-center">
-            <button className="text-slate-600 hover:text-blue-600 focus:outline-none">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="text-slate-600 hover:text-blue-600 focus:outline-none p-2"
+              aria-expanded={isOpen}
+            >
               <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                {isOpen ? (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                ) : (
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
+                )}
               </svg>
             </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className="px-4 pt-2 pb-6 space-y-1 bg-white shadow-lg">
+          <Link
+            href="/"
+            className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+            onClick={() => setIsOpen(false)}
+          >
+            Inicio
+          </Link>
+          <div className="py-2">
+            <p className="px-3 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Servicios</p>
+            <Link
+              href="/servicios/control-legionella"
+              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Control de Legionella
+            </Link>
+            <Link
+              href="/servicios/desinfecciones"
+              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Desinfecciones
+            </Link>
+            <Link
+              href="/servicios/gestion-del-agua"
+              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Gestión del Agua
+            </Link>
+          </div>
+          <Link
+            href="/normativa"
+            className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+            onClick={() => setIsOpen(false)}
+          >
+            Normativa
+          </Link>
+          <Link
+            href="/contacto"
+            className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+            onClick={() => setIsOpen(false)}
+          >
+            Contacto
+          </Link>
+          <div className="pt-4">
+            <Link
+              href="/contacto"
+              className="block w-full text-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold"
+              onClick={() => setIsOpen(false)}
+            >
+              Pedir Presupuesto
+            </Link>
           </div>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function Home() {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
-            <div className="lg:w-1/2">
+            <div className="w-full lg:w-1/2">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Expertos en Higiene y Tecnología del Agua</h2>
               <p className="text-slate-600 mb-4 leading-relaxed">
                 En GADYT, nuestro equipo está liderado por Mario Jiménez, gran especialista farmacéutico en gestión de agua potable y tratamiento de Legionella. Nuestro enfoque integral combina la más avanzada tecnología con el cumplimiento del <strong className="text-slate-900">Real Decreto 487/2022</strong>.
@@ -57,22 +57,22 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="lg:w-1/2 relative">
+            <div className="w-full lg:w-1/2 relative">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <Image
                   src="/assets/furgoneta-gadyt.jpg"
                   alt="Vehículo oficial de GADYT acudiendo a un servicio"
                   fill
                   className="object-cover"
-                  sizes="(max-w-width: 768px) 100vw, 50vw"
+                  sizes="(max-width: 768px) 100vw, 50vw"
                 />
               </div>
-              <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4">
+              <div className="absolute bottom-4 left-4 md:-bottom-6 md:-left-6 bg-white p-4 rounded-xl shadow-xl flex items-center gap-4 z-20">
                 <div className="bg-green-100 p-3 rounded-full text-green-600">
                   <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                 </div>
                 <div>
-                  <p className="font-bold text-slate-900 text-lg">Servicio Rápido</p>
+                  <p className="font-bold text-slate-900 text-lg leading-tight">Servicio Rápido</p>
                   <p className="text-sm text-slate-500">En toda Andalucía</p>
                 </div>
               </div>
