@@ -11,9 +11,13 @@ export default function Contacto() {
 
         try {
             const formData = new FormData(e.currentTarget);
-            const response = await fetch("/contacto.php", {
+            // Netlify requiere que se envíe el nombre del formulario
+            formData.append("form-name", "contacto-gadyt");
+
+            const response = await fetch("/", {
                 method: "POST",
-                body: formData,
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData as any).toString(),
             });
 
             if (response.ok) {
@@ -106,7 +110,26 @@ export default function Contacto() {
                 <div className="md:w-2/3">
                     <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
                         <h2 className="text-2xl font-bold text-slate-900 mb-6">Envíanos un mensaje</h2>
-                        <form onSubmit={handleSubmit} className="space-y-6">
+
+                        {status === "error" && (
+                            <div className="mb-6 p-4 bg-red-50 border border-red-100 text-red-700 rounded-xl text-sm flex items-start gap-3">
+                                <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                <div>
+                                    <p className="font-bold mb-1">Error al enviar el mensaje</p>
+                                    <p>Hubo un problema al conectar con el servidor. Por favor, revisa tu conexión a internet o contáctanos por teléfono o email directo directamente mientras solucionamos el problema.</p>
+                                </div>
+                            </div>
+                        )}
+
+                        <form onSubmit={handleSubmit} className="space-y-6" name="contacto-gadyt" data-netlify="true" data-netlify-honeypot="bot-field">
+                            {/* Inputs ocultos necesarios para Netlify Forms en React/Next.js */}
+                            <input type="hidden" name="form-name" value="contacto-gadyt" />
+                            <p className="hidden">
+                                <label>
+                                    No llenes esto si eres humano: <input name="bot-field" />
+                                </label>
+                            </p>
+
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label htmlFor="name" className="block text-sm font-bold text-slate-950 mb-1">Nombre completo</label>
@@ -165,4 +188,3 @@ export default function Contacto() {
         </div>
     );
 }
-
