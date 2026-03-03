@@ -41,8 +41,8 @@ export default function Navbar() {
               </button>
               <div className="absolute left-0 mt-2 w-48 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
                 <div className="py-1">
-                  <Link href="/#analisis-piscinas" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Piscinas</Link>
-                  <Link href="/#analisis-potable" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Agua potable</Link>
+                  <Link href="/servicios/analisis-piscinas" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Piscinas</Link>
+                  <Link href="/servicios/analisis-potable" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Agua potable</Link>
                 </div>
               </div>
             </div>
@@ -118,14 +118,14 @@ export default function Navbar() {
           <div className="py-2">
             <p className="px-3 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Análisis</p>
             <Link
-              href="/#analisis-piscinas"
+              href="/servicios/analisis-piscinas"
               className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Piscinas
             </Link>
             <Link
-              href="/#analisis-potable"
+              href="/servicios/analisis-potable"
               className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
