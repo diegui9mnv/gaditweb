@@ -215,7 +215,7 @@ export default function Home() {
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Piscina Section */}
-            <div id="analisis-piscinas" className="group relative">
+            <div id="analisis-piscinas" className="group relative scroll-mt-24">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
               <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
                 <div className="relative h-72 overflow-hidden">
@@ -243,7 +243,7 @@ export default function Home() {
             </div>
 
             {/* Agua Potable Section */}
-            <div id="analisis-potable" className="group relative">
+            <div id="analisis-potable" className="group relative scroll-mt-24">
               <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
               <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
                 <div className="relative h-72 overflow-hidden">
