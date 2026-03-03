@@ -45,7 +45,7 @@ export default function GestionAgua() {
                         <div className="lg:w-1/2">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/gestion.png"
+                                    src="/images/real/gestion.jpeg"
                                     alt="Gestión del agua"
                                     fill
                                     className="object-cover"

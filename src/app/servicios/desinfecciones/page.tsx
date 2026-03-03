@@ -43,7 +43,7 @@ export default function Desinfecciones() {
                         <div className="lg:w-1/2">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/desinfecion.png"
+                                    src="/images/real/desinfeccion.png"
                                     alt="Desinfeccione técnicas"
                                     fill
                                     className="object-cover object-center"

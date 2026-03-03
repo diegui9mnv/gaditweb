@@ -123,7 +123,7 @@ export default function Home() {
             <Link href="/servicios/desinfecciones" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/desinfecion.png"
+                  src="/images/real/desinfeccion.png"
                   alt="Desinfecciones Técnicas"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
@@ -171,7 +171,7 @@ export default function Home() {
             <Link href="/servicios/gestion-del-agua" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/gestion.png"
+                  src="/images/real/gestion.jpeg"
                   alt="Gestión del Agua"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
