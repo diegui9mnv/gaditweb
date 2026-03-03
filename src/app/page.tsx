@@ -34,12 +34,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
-              <h2 className="text-3xl font-bold text-slate-900 mb-6">Expertos en Higiene y Tecnología del Agua</h2>
+              <h2 className="text-3xl font-bold text-slate-900 mb-6">Expertos en higiene y tecnología del agua</h2>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                En GADYT, nuestro equipo está liderado por Mario Jiménez, gran especialista farmacéutico en gestión de agua potable y tratamiento de Legionella. Nuestro enfoque integral combina la más avanzada tecnología con el cumplimiento del <strong className="text-slate-900">Real Decreto 487/2022</strong>.
+                En GADYT, nuestro equipo combina la más avanzada tecnología con el cumplimiento del Real Decreto 487/2022, ofreciendo un enfoque integral en la gestión del agua potable y el tratamiento de Legionella. Este trabajo está liderado por Mario Jiménez, farmacéutico especialista en este ámbito.
               </p>
-              <p className="text-slate-600 mb-6 leading-relaxed">
-                Además, te preparamos para el futuro: estamos capacitados para la elaboración e implementación del <strong>Plan de prevención de Legionella 2026</strong>, garantizando desde hoy el cumplimiento del próximo <strong>Real Decreto 614/2024</strong>.
+              <p className="text-slate-600 mb-4 leading-relaxed">
+                Te ayudamos a encontrar las soluciones más adecuadas para tu instalación, adaptadas a tus necesidades reales. Te asesoramos y acompañamos en cada paso para garantizar la seguridad y la calidad del agua. Cumple con todas las exigencias del Real Decreto 487/2022 de forma clara y sencilla.
+              </p>
+              <p className="text-slate-600 mb-6 leading-relaxed font-semibold">
+                Protege tu instalación frente a la Legionella con el respaldo de un equipo especializado.
               </p>
 
               <div className="bg-blue-50 p-6 rounded-2xl mb-8 border border-blue-100">
@@ -85,9 +88,9 @@ export default function Home() {
       <section className="py-20 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Nuestros Servicios Principales</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Nuestros Servicios Especializados</h2>
             <p className="text-slate-600">
-              Ofrecemos soluciones técnicas y sanitarias para el control del agua y superficies. Cubrimos las necesidades de comunidades, hoteles, viviendas rurales e industria.
+              Ofrecemos soluciones técnicas y sanitarias avanzadas para el control del agua y superficies. Cubrimos las necesidades de comunidades, hoteles, industria y promociones de obra nueva.
             </p>
           </div>
 
@@ -96,8 +99,8 @@ export default function Home() {
             <Link href="/servicios/control-legionella" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/analisis-agua-potable.jpg"
-                  alt="Técnico realizando análisis de control de Legionella"
+                  src="/images/real/legionella.png"
+                  alt="Control de Legionella"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
@@ -108,7 +111,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Control de Legionella</h3>
                 <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                  Planes de Prevención (PPCL) y Planes Sanitarios (PSL) adaptados al RD 487/2022 y RD 614/2024.
+                  Planes de Prevención (PPCL) y Planes Sanitarios (PSL) adaptados al RD 487/2022.
                 </p>
                 <div className="text-blue-600 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
                   Saber más <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
@@ -120,8 +123,8 @@ export default function Home() {
             <Link href="/servicios/desinfecciones" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/zona-inundada.jpg"
-                  alt="Servicios de desinfección y limpieza de zonas difíciles"
+                  src="/images/real/desinfecion.png"
+                  alt="Desinfecciones Técnicas"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
@@ -130,7 +133,7 @@ export default function Home() {
                 <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg>
                 </div>
-                <h3 className="text-xl font-bold text-slate-900 mb-3">Desinfecciones</h3>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Desinfecciones Técnicas</h3>
                 <p className="text-slate-600 mb-4 text-sm leading-relaxed">
                   Desinfecciones técnicas con entrega de documentación sanitaria oficial, garantizando la bioseguridad.
                 </p>
@@ -141,11 +144,35 @@ export default function Home() {
             </Link>
 
             {/* Service 3 */}
+            <Link href="/servicios/limpieza-aljibes" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
+              <div className="h-48 bg-blue-100 relative overflow-hidden">
+                <Image
+                  src="/images/real/algibe.png"
+                  alt="Limpieza de Aljibes"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
+                />
+              </div>
+              <div className="p-8">
+                <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-6">
+                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
+                </div>
+                <h3 className="text-xl font-bold text-slate-900 mb-3">Limpieza de Aljibes</h3>
+                <p className="text-slate-600 mb-4 text-sm leading-relaxed">
+                  Limpieza y desinfección de aljibes cumpliendo estrictamente con el RD 487/2022.
+                </p>
+                <div className="text-blue-600 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
+                  Saber más <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
+                </div>
+              </div>
+            </Link>
+
+            {/* Service 4 */}
             <Link href="/servicios/gestion-del-agua" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/analisis-piscina.jpg"
-                  alt="Técnico trabajando en muestreo y gestión del agua en piscina"
+                  src="/images/real/gestion.png"
+                  alt="Gestión del Agua"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
@@ -156,7 +183,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Gestión del Agua</h3>
                 <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                  Limpieza y desinfección de aljibes, análisis de agua para piscinas y potable bajo los RD 742/2013 y RD 3/2023.
+                  Tratamiento de aguas, cloración automática y mantenimiento de grupos de presión y piscinas.
                 </p>
                 <div className="text-blue-600 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
                   Saber más <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>

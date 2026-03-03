@@ -26,7 +26,8 @@ export default function Navbar() {
               <div className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200">
                 <div className="py-1">
                   <Link href="/servicios/control-legionella" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Control de Legionella</Link>
-                  <Link href="/servicios/desinfecciones" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Desinfecciones</Link>
+                  <Link href="/servicios/desinfecciones" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Desinfecciones Técnicas</Link>
+                  <Link href="/servicios/limpieza-aljibes" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Limpieza de Aljibes</Link>
                   <Link href="/servicios/gestion-del-agua" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Gestión del Agua</Link>
                 </div>
               </div>
@@ -82,7 +83,14 @@ export default function Navbar() {
               className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
-              Desinfecciones
+              Desinfecciones Técnicas
+            </Link>
+            <Link
+              href="/servicios/limpieza-aljibes"
+              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Limpieza de Aljibes
             </Link>
             <Link
               href="/servicios/gestion-del-agua"

@@ -14,10 +14,10 @@ export default function GestionAgua() {
                 <div className="absolute inset-0 bg-blue-800/20 z-0"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
-                        Mantenimiento y Gestión del Agua
+                        GESTIÓN DEL AGUA
                     </h1>
                     <p className="text-xl text-blue-100 max-w-3xl">
-                        Aseguramos la calidad y salubridad del agua en depósitos, aljibes y vasos de piscina, acompañando a nuestros clientes con asesoría completa.
+                        Ofrecemos un servicio integral de gestión y tratamiento de aguas que incluye la instalación y el mantenimiento de sistemas de cloración automática, tanto para piscinas como para redes de agua potable.
                     </p>
                 </div>
             </section>
@@ -26,32 +26,16 @@ export default function GestionAgua() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="flex flex-col lg:flex-row gap-16 items-center">
                         <div className="lg:w-1/2">
-                            <h2 className="text-3xl font-bold text-slate-900 mb-6">Un enfoque global y seguro</h2>
-
-                            <div className="space-y-8">
-                                <div>
-                                    <h3 className="text-xl font-bold text-blue-700 mb-2 border-b pb-2">Mantenimiento de Aljibes</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">
-                                        Realizamos la obligatoria limpieza y desinfección anual de depósitos de agua de consumo humano e industrial, evitando la acumulación de incrustaciones, sedimentos y el crecimiento microbiológico que puede derivar en problemas graves de salud.
-                                    </p>
-                                </div>
-
-                                <div>
-                                    <h3 className="text-xl font-bold text-blue-700 mb-2 border-b pb-2">Análisis de Agua Normativo</h3>
-                                    <ul className="text-slate-600 text-sm leading-relaxed list-disc ml-5 space-y-2">
-                                        <li><strong>Piscinas:</strong> Controles físico-químicos y microbiológicos exhaustivos en cumplimiento con el <strong>RD 742/2013</strong>.</li>
-                                        <li><strong>Agua Potable:</strong> Verificación y control en redes de viviendas, urbanizaciones y pozos privados, asegurando que se cumple el <strong>RD 3/2023</strong> de calidad del agua de consumo.</li>
-                                    </ul>
-                                </div>
-
-                                <div>
-                                    <h3 className="text-xl font-bold text-blue-700 mb-2 border-b pb-2">Consultoría Técnica y Legal</h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">
-                                        Facilitamos la burocracia con Sanidad y Medio Ambiente. Tramitamos sistemas <strong>SILOÉ</strong> para piscinas, gestionamos autorizaciones de <strong>vertido al dominio público hidráulico</strong> y expedientes de <strong>Calificación Ambiental (CA)</strong> necesarios para la apertura de nuevas instalaciones.
-                                    </p>
-                                </div>
-                            </div>
-
+                            <h2 className="text-3xl font-bold text-slate-900 mb-6">Tratamiento y Mantenimiento Técnico</h2>
+                            <p className="text-slate-600 mb-4 leading-relaxed">
+                                Nuestro objetivo es garantizar una desinfección continua y precisa, ajustando los niveles de biocida de forma automatizada para asegurar un suministro seguro y de alta calidad en todo momento. Contamos con un equipo técnico especializado en el mantenimiento de grupos de presión, donde nos encargamos de la regulación de calderines y la optimización de la fuerza de impulsión para evitar averías y garantizar un flujo constante.
+                            </p>
+                            <p className="text-slate-600 mb-6 leading-relaxed">
+                                Además, realizamos reparaciones de fontanería general y llevamos a cabo la instalación de nuevos aljibes en aquellos casos donde el deterioro, la rotura o la normativa vigente exijan la sustitución completa de los depósitos existentes.
+                            </p>
+                            <p className="text-slate-600 mb-8 leading-relaxed">
+                                Nuestra capacidad técnica se extiende también al ámbito de las piscinas, donde resolvemos problemas estructurales o de funcionamiento mediante reparaciones específicas y arreglos de averías. Este enfoque preventivo y correctivo asegura que todas las instalaciones hidráulicas de su comunidad o complejo hotelero operen con la máxima eficiencia, prolongando la vida útil de los equipos y cumpliendo con los estándares de seguridad exigidos.
+                            </p>
                             <div className="mt-8">
                                 <Link href="/contacto" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md">
                                     Consultar Proyecto
@@ -61,8 +45,8 @@ export default function GestionAgua() {
                         <div className="lg:w-1/2">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/deposito-sucio-1.jpg"
-                                    alt="Evaluación y limpieza técnica de un aljibe o depósito de agua"
+                                    src="/images/real/gestion.png"
+                                    alt="Gestión del agua"
                                     fill
                                     className="object-cover"
                                 />
