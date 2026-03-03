@@ -94,7 +94,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Service 1 */}
             <Link href="/servicios/control-legionella" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
@@ -190,6 +190,85 @@ export default function Home() {
                 </div>
               </div>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Analysis Services Section - Premium Artistic Look */}
+      <section className="py-24 relative overflow-hidden bg-white">
+        {/* Decorative background elements */}
+        <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+        <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+            <div className="max-w-2xl">
+              <h2 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
+                Análisis: <span className="text-blue-600">Piscinas y Agua Potable</span>
+              </h2>
+              <div className="h-1.5 w-24 bg-blue-600 rounded-full mb-6"></div>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Garantizamos la seguridad y salubridad de sus instalaciones mediante controles rigurosos y metodologías certificadas.
+              </p>
+            </div>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12">
+            {/* Piscina Section */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+              <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="relative h-72 overflow-hidden">
+                  <Image
+                    src="/images/real/piscina1.png"
+                    alt="Técnico realizando análisis de agua en piscina"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <span className="bg-blue-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-2 inline-block">RD 742/2013</span>
+                    <h3 className="text-2xl font-bold">Análisis de Piscinas</h3>
+                  </div>
+                </div>
+                <div className="p-8 flex-grow">
+                  <p className="text-slate-600 leading-relaxed mb-6">
+                    En GADYT, nos encargamos de realizar los análisis de agua en tu piscina, para garantizar su calidad y el cumplimiento de la normativa vigente. Contamos con equipos de medición avanzados y trabajamos con laboratorios acreditados para evaluar los principales parámetros físico-químicos y microbiológicos del agua.
+                  </p>
+                  <p className="text-slate-500 text-sm italic border-l-4 border-blue-500 pl-4">
+                    Según el Real Decreto 742/2013, es obligatorio realizar controles periódicos para asegurar que el agua no represente un riesgo para la salud.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Agua Potable Section */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
+              <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
+                <div className="relative h-72 overflow-hidden">
+                  <Image
+                    src="/images/real/potable1.png"
+                    alt="Muestreo de agua potable para análisis sanitario"
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
+                  <div className="absolute bottom-6 left-6 text-white">
+                    <span className="bg-green-600 text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full mb-2 inline-block">RD 3/2023</span>
+                    <h3 className="text-2xl font-bold">Agua Potable</h3>
+                  </div>
+                </div>
+                <div className="p-8 flex-grow">
+                  <p className="text-slate-600 leading-relaxed mb-6">
+                    En GADYT, realizamos análisis de agua potable para garantizar su calidad y seguridad, cumpliendo con los requisitos del Real Decreto 3/2023, que establece los criterios sanitarios de la calidad del agua de consumo humano.
+                  </p>
+                  <p className="text-slate-500 text-sm italic border-l-4 border-green-500 pl-4">
+                    Servicios orientados a pozos, viviendas, aljibes y comunidades de vecinos que requieran verificar la potabilidad del agua.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
