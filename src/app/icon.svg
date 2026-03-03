@@ -1,0 +1,11 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <circle cx="256" cy="256" r="256" fill="white"/>
+  <path d="M256 80L340 164C386.392 210.392 386.392 285.608 340 332C293.608 378.392 218.392 378.392 172 332C125.608 285.608 125.608 210.392 172 164L256 80Z" fill="url(#gradient)"/>
+  <text x="256" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="80" font-weight="900" fill="black">GADYT</text>
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#22c55e" />
+      <stop offset="100%" stop-color="#3b82f6" />
+    </linearGradient>
+  </defs>
+</svg>
