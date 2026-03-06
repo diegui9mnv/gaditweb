@@ -7,7 +7,7 @@ const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
 const EMAILJS_SERVICE_ID =
     process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xo5bf8w";
 const EMAILJS_TEMPLATE_ID =
-    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_lrx1v8a";
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_u1cxi2n";
 const EMAILJS_PUBLIC_KEY =
     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "Mn0yoeke1tUVqDz29";
 const CONTACT_TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || "contacto@gadyt.es";
