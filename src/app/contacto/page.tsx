@@ -4,9 +4,12 @@ import React, { useState } from "react";
 
 const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
 
-const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
-const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
-const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+const EMAILJS_SERVICE_ID =
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xo5bf8w";
+const EMAILJS_TEMPLATE_ID =
+    process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_lrx1v8a";
+const EMAILJS_PUBLIC_KEY =
+    process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "Mn0yoeke1tUVqDz29";
 const CONTACT_TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || "contacto@gadyt.es";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -40,8 +43,16 @@ export default function Contacto() {
             const service = getField(formData, "service");
             const message = getField(formData, "message");
 
-            if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
-                console.error("Faltan variables de entorno de EmailJS.");
+            const missingEmailJsVars = [
+                !EMAILJS_SERVICE_ID && "NEXT_PUBLIC_EMAILJS_SERVICE_ID",
+                !EMAILJS_TEMPLATE_ID && "NEXT_PUBLIC_EMAILJS_TEMPLATE_ID",
+                !EMAILJS_PUBLIC_KEY && "NEXT_PUBLIC_EMAILJS_PUBLIC_KEY",
+            ].filter(Boolean);
+
+            if (missingEmailJsVars.length > 0) {
+                console.error(
+                    `Faltan variables de entorno de EmailJS: ${missingEmailJsVars.join(", ")}`
+                );
                 setStatus("error");
                 return;
             }
