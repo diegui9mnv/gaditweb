@@ -1,37 +1,66 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import ServiceAccordion from "@/components/services/ServiceAccordion";
 
 export const metadata: Metadata = {
     title: "Avanzado Plan de Prevención de Legionella 2026 | GADYT",
-    description: "Especialistas en control de Legionella. Cumplimiento del RD 487/2022 y RD 614/2024. Implementación de PPCL y PSL para hoteles, spas, ACS y más.",
+    description:
+        "Especialistas en control legionella Marbella y control legionella Estepona, con cobertura en Sotogrande y Manilva. Cumplimiento del RD 487/2022 y RD 614/2024.",
 };
+
+const legionellaFaq = [
+    {
+        title: "¿Qué diferencia hay entre PPCL y PSL?",
+        content:
+            "El PPCL cubre medidas preventivas básicas exigibles y el PSL incorpora un enfoque sanitario más avanzado, con análisis de riesgo y control más profundo de la instalación.",
+    },
+    {
+        title: "¿Cómo os preparáis para una inspección sanitaria?",
+        content:
+            "Revisamos documentación, registros y estado real de la red para que tu instalación llegue a inspección con trazabilidad y medidas correctoras aplicadas.",
+    },
+    {
+        title: "¿Prestáis servicio local en Costa del Sol?",
+        content:
+            "Sí, trabajamos de forma continuada en Manilva, Estepona, Sotogrande y Marbella para comunidades, hoteles y centros deportivos.",
+    },
+];
 
 export default function ControlLegionella() {
     return (
         <div className="flex flex-col min-h-screen">
-            <section className="bg-slate-900 py-20 text-white relative">
+            <section className="bg-slate-900 py-14 md:py-20 text-white relative">
                 <div className="absolute inset-0 bg-blue-900/30 z-0"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                         Control de Legionella
                     </h1>
                     <p className="text-xl text-blue-100 max-w-3xl">
-                        En nuestra empresa te ofrecemos una solución integral para el cumplimiento estricto del Real Decreto 487/2022, cubriendo desde la elaboración técnica de los planes de prevención y control de Legionella hasta el control analítico exhaustivo de las aguas de tu red.
+                        Te ofrecemos una <strong>solución integral</strong> para el cumplimiento estricto del Real Decreto 487/2022, cubriendo desde la elaboración técnica de los planes de prevención y control de Legionella hasta el control analítico exhaustivo de las aguas de tu red.
+                    </p>
+                    <p className="text-blue-200 mt-4 font-semibold">
+                        Servicio recurrente en <strong>Manilva, Estepona, Sotogrande y Marbella</strong>.
                     </p>
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
+            <section className="py-14 md:py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col lg:flex-row gap-16 items-center">
-                        <div className="lg:w-1/2">
+                    <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-start">
+                        <div className="lg:w-1/2 order-2 lg:order-1">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">Soluciones Integrales y a Medida</h2>
                             <p className="text-slate-900 mb-4 leading-relaxed">
-                                Ajustamos cada plan de prevención a las características específicas de tu instalación, garantizando siempre la máxima seguridad sanitaria y la adecuación a la normativa vigente. Realizamos las tareas de limpieza y desinfección en todo tipo de sistemas, incluyendo depósitos de AFCH y ACS, tuberías, redes de contraincendios, sistemas de riego y puntos terminales.
+                                Ajustamos cada plan de prevención a las características específicas de tu instalación, garantizando siempre la <strong>máxima seguridad sanitaria</strong> y la adecuación a la normativa vigente. Realizamos las tareas de limpieza y desinfección en todo tipo de sistemas, incluyendo depósitos de AFCH y ACS, tuberías, redes de contraincendios, sistemas de riego y puntos terminales.
                             </p>
                             <p className="text-slate-900 mb-6 leading-relaxed">
                                 Al finalizar cada actuación, emitimos el certificado oficial de limpieza y desinfección conforme a las exigencias legales, encargándonos además de ejecutar el plan de muestreo y análisis de agua necesario para asegurar la correcta trazabilidad documental y el mantenimiento óptimo de tus instalaciones.
+                            </p>
+                            <p className="text-slate-700 mb-6 leading-relaxed">
+                                Si estás buscando <strong>control legionella Marbella</strong> o <strong>control legionella Estepona</strong>, trabajamos con protocolos técnicos completos y cobertura también en Sotogrande.
+                            </p>
+                            <p className="text-slate-800 mb-6 leading-relaxed font-medium bg-blue-50 border border-blue-100 rounded-xl p-4">
+                                Nuestro enfoque combina <strong>prevención real + documentación sólida</strong>, clave para evitar sanciones y minimizar riesgos operativos.
                             </p>
                             <ul className="space-y-4 mb-8 text-slate-900">
                                 <li className="flex items-start">
@@ -55,7 +84,7 @@ export default function ControlLegionella() {
                                 Solicitar Asesoría Normativa
                             </Link>
                         </div>
-                        <div className="lg:w-1/2">
+                        <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
                                     src="/images/real/legionella.png"
@@ -68,6 +97,12 @@ export default function ControlLegionella() {
                     </div>
                 </div>
             </section>
+
+            <ServiceAccordion
+                heading="Preguntas Clave de Control de Legionella"
+                subheading="Respuestas directas para facilitar decisiones técnicas y normativas."
+                items={legionellaFaq}
+            />
         </div>
     );
 }

@@ -1,37 +1,63 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
+import ServiceAccordion from "@/components/services/ServiceAccordion";
 
 export const metadata: Metadata = {
     title: "Análisis de Agua en Piscinas (RD 742/2013) | GADYT",
-    description: "Cumple con el Real Decreto 742/2013. Análisis físico-químico y microbiológico para garantizar la calidad y seguridad en piscinas, spas y parques acuáticos.",
+    description:
+        "Análisis de piscinas en Manilva, Estepona, Sotogrande y Marbella. Cumple el RD 742/2013 con control físico-químico y microbiológico.",
 };
+
+const piscinasFaq = [
+    {
+        title: "¿Qué pasa si un parámetro sale fuera de rango?",
+        content:
+            "Te orientamos con un plan de acción rápida para corregir desinfectante, pH o microbiología y recuperar el cumplimiento en el menor tiempo posible.",
+    },
+    {
+        title: "¿Los informes sirven para inspección sanitaria?",
+        content:
+            "Sí, trabajamos con laboratorios acreditados y entregamos informes trazables para justificar el control analítico ante inspecciones.",
+    },
+    {
+        title: "¿En qué municipios cubrís este servicio?",
+        content:
+            "Prestamos servicio de análisis en Manilva, Estepona, Sotogrande y Marbella, con planificación adaptada a cada instalación.",
+    },
+];
 
 export default function AnalisisPiscinas() {
     return (
         <div className="flex flex-col min-h-screen">
-            <section className="bg-slate-900 py-20 text-white relative">
+            <section className="bg-slate-900 py-14 md:py-20 text-white relative">
                 <div className="absolute inset-0 bg-blue-900/30 z-0"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                         Análisis de Piscinas
                     </h1>
                     <p className="text-xl text-blue-100 max-w-3xl">
-                        Garantizamos la seguridad sanitaria de tu instalación mediante controles periódicos y analíticas especializadas, asegurando el cumplimiento estricto del Real Decreto 742/2013.
+                        Garantizamos la <strong>seguridad sanitaria</strong> de tu instalación mediante controles periódicos y analíticas especializadas, asegurando el cumplimiento estricto del Real Decreto 742/2013.
+                    </p>
+                    <p className="text-blue-200 mt-4 font-semibold">
+                        Servicio activo en <strong>Manilva, Estepona, Sotogrande y Marbella</strong>.
                     </p>
                 </div>
             </section>
 
-            <section className="py-20 bg-white">
+            <section className="py-14 md:py-20 bg-white">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="flex flex-col lg:flex-row gap-16 items-start">
-                        <div className="lg:w-1/2">
+                    <div className="flex flex-col lg:flex-row gap-10 md:gap-16 items-start">
+                        <div className="lg:w-1/2 order-2 lg:order-1">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">Máximo Control y Cumplimiento Normativo</h2>
                             <p className="text-slate-900 mb-4 leading-relaxed">
                                 En GADYT trabajamos en constante coordinación con laboratorios acreditados para ofrecer unos resultados precisos y rápidos. Realizar análisis periódicos del agua de tu piscina o spa no solo es una obligación legal según el <strong>Real Decreto 742/2013</strong>, sino que es fundamental para prevenir brotes víricos y bacterianos, garantizando así la salud de los bañistas.
                             </p>
                             <p className="text-slate-900 mb-6 leading-relaxed">
                                 Evaluamos parámetros críticos tanto *in situ* como en el laboratorio, asegurando que los niveles de desinfectante (cloro libre y combinado, o bromo), pH, turbidez, ácido isocianúrico y microbiología general (incluyendo *E. coli* y *Pseudomonas aeruginosa*) se mantengan siempre en valores óptimos.
+                            </p>
+                            <p className="text-slate-800 mb-6 leading-relaxed font-medium bg-blue-50 border border-blue-100 rounded-xl p-4">
+                                Tu ventaja competitiva: <strong>detectar desviaciones antes de que se conviertan en incidencias</strong>.
                             </p>
 
                             <h3 className="text-2xl font-bold text-slate-900 mb-4 mt-8">Nuestros Procedimientos</h3>
@@ -58,7 +84,7 @@ export default function AnalisisPiscinas() {
                                 Solicitar Presupuesto Especializado
                             </Link>
                         </div>
-                        <div className="lg:w-1/2 sticky top-24">
+                        <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full lg:sticky lg:top-24">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
                                     src="/images/real/piscina1.png"
@@ -75,6 +101,12 @@ export default function AnalisisPiscinas() {
                     </div>
                 </div>
             </section>
+
+            <ServiceAccordion
+                heading="Preguntas Frecuentes de Análisis de Piscinas"
+                subheading="Respuestas rápidas para mantener tu instalación en control."
+                items={piscinasFaq}
+            />
         </div>
     );
 }

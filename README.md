@@ -1,36 +1,60 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# GADYT Web
 
-## Getting Started
+Web corporativa/publicitaria de GADYT desarrollada con Next.js (App Router), React y Tailwind CSS.
 
-First, run the development server:
+## Stack
+
+- Next.js 16
+- React 19
+- TypeScript
+- Tailwind CSS v4
+
+## Scripts
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
+npm run start
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Despliegue estático
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+El proyecto está configurado para exportación estática:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `next.config.ts` usa `output: "export"`.
+- Las imágenes se sirven con `images.unoptimized: true`.
 
-## Learn More
+La salida generada queda en `out/` tras `npm run build`.
 
-To learn more about Next.js, take a look at the following resources:
+## Formularios
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+La página de contacto (`/contacto`) envía el correo con **EmailJS** (sin Netlify Forms).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Variables de entorno necesarias (ver `.env.example`):
 
-## Deploy on Vercel
+- `NEXT_PUBLIC_EMAILJS_SERVICE_ID`
+- `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
+- `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
+- `NEXT_PUBLIC_CONTACT_TO_EMAIL` (correo de destino, por ejemplo el del jefe)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Parámetros enviados al template:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `to_email`
+- `from_name`
+- `company`
+- `from_email`
+- `phone`
+- `service`
+- `message`
+- `full_message`
+- `submitted_at`
+- `website`
+- `reply_to`
+
+## SEO
+
+- `public/robots.txt`
+- `public/sitemap.xml`
+
+El sitemap incluye home, servicios, contacto, normativa y páginas legales.

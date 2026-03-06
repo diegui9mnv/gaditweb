@@ -2,8 +2,22 @@
 
 import React, { useState } from "react";
 
+const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
+
+const EMAILJS_SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
+const CONTACT_TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || "contacto@gadyt.es";
+
+type FormStatus = "idle" | "submitting" | "success" | "error";
+
+function getField(formData: FormData, key: string): string {
+    const value = formData.get(key);
+    return typeof value === "string" ? value.trim() : "";
+}
+
 export default function Contacto() {
-    const [status, setStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
+    const [status, setStatus] = useState<FormStatus>("idle");
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
@@ -11,18 +25,82 @@ export default function Contacto() {
 
         try {
             const formData = new FormData(e.currentTarget);
-            // Netlify requiere que se envíe el nombre del formulario
-            formData.append("form-name", "contacto-gadyt");
+            const botField = getField(formData, "bot-field");
 
-            const response = await fetch("/", {
+            // Honeypot anti-spam: si se rellena, simulamos éxito y no enviamos nada.
+            if (botField) {
+                setStatus("success");
+                return;
+            }
+
+            const name = getField(formData, "name");
+            const company = getField(formData, "company");
+            const email = getField(formData, "email");
+            const phone = getField(formData, "phone");
+            const service = getField(formData, "service");
+            const message = getField(formData, "message");
+
+            if (!EMAILJS_SERVICE_ID || !EMAILJS_TEMPLATE_ID || !EMAILJS_PUBLIC_KEY) {
+                console.error("Faltan variables de entorno de EmailJS.");
+                setStatus("error");
+                return;
+            }
+
+            const submittedAt = new Date().toLocaleString("es-ES", {
+                dateStyle: "medium",
+                timeStyle: "short",
+            });
+
+            const serviceLabels: Record<string, string> = {
+                legionella: "Control y Prevención de Legionella",
+                desinfeccion: "Desinfecciones Técnicas",
+                aljibes: "Mantenimiento de Aljibes",
+                analitica: "Análisis de Agua (Piscinas, Potable)",
+                consultoria: "Consultoría Técnica Normativa",
+                otro: "Otro",
+            };
+
+            const serviceText = serviceLabels[service] || service || "No indicado";
+            const fullMessage = [
+                `Nombre: ${name}`,
+                `Empresa/Instalación: ${company || "No indicado"}`,
+                `Correo: ${email}`,
+                `Teléfono: ${phone}`,
+                `Servicio: ${serviceText}`,
+                "",
+                "Mensaje:",
+                message,
+            ].join("\n");
+
+            const response = await fetch(EMAILJS_ENDPOINT, {
                 method: "POST",
-                headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                body: new URLSearchParams(formData as any).toString(),
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    service_id: EMAILJS_SERVICE_ID,
+                    template_id: EMAILJS_TEMPLATE_ID,
+                    user_id: EMAILJS_PUBLIC_KEY,
+                    template_params: {
+                        to_email: CONTACT_TO_EMAIL,
+                        from_name: name,
+                        company,
+                        from_email: email,
+                        phone,
+                        service: serviceText,
+                        message,
+                        full_message: fullMessage,
+                        submitted_at: submittedAt,
+                        website: "gadyt.es",
+                        reply_to: email,
+                    },
+                }),
             });
 
             if (response.ok) {
+                e.currentTarget.reset();
                 setStatus("success");
             } else {
+                const errorBody = await response.text();
+                console.error("Error EmailJS:", errorBody);
                 setStatus("error");
             }
         } catch (error) {
@@ -34,7 +112,7 @@ export default function Contacto() {
     if (status === "success") {
         return (
             <div className="flex flex-col min-h-screen bg-slate-50">
-                <section className="bg-slate-900 py-24 text-white border-t border-slate-800 flex-grow flex items-center">
+                <section className="bg-slate-900 py-16 md:py-24 text-white border-t border-slate-800 flex-grow flex items-center">
                     <div className="max-w-3xl mx-auto px-4 text-center">
                         <div className="bg-green-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-8 shadow-lg shadow-green-500/20">
                             <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7"></path></svg>
@@ -57,7 +135,7 @@ export default function Contacto() {
 
     return (
         <div className="flex flex-col min-h-screen bg-slate-50">
-            <section className="bg-slate-900 py-16 text-white border-t border-slate-800">
+            <section className="bg-slate-900 py-12 md:py-16 text-white border-t border-slate-800">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
                     <h1 className="text-4xl font-extrabold mb-4">Contacta con GADYT</h1>
                     <p className="text-xl text-slate-300">
@@ -66,9 +144,9 @@ export default function Contacto() {
                 </div>
             </section>
 
-            <section className="py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-12">
+            <section className="py-14 md:py-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row gap-8 md:gap-12">
                 <div className="md:w-1/3">
-                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 h-full">
+                    <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100 h-full">
                         <h2 className="text-2xl font-bold text-slate-900 mb-8">Nuestros Datos</h2>
                         <ul className="space-y-6">
                             <li className="flex items-start">
@@ -108,7 +186,7 @@ export default function Contacto() {
                 </div>
 
                 <div className="md:w-2/3">
-                    <div className="bg-white p-8 rounded-2xl shadow-sm border border-slate-100">
+                    <div className="bg-white p-6 md:p-8 rounded-2xl shadow-sm border border-slate-100">
                         <h2 className="text-2xl font-bold text-slate-900 mb-6">Envíanos un mensaje</h2>
 
                         {status === "error" && (
@@ -116,14 +194,13 @@ export default function Contacto() {
                                 <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <div>
                                     <p className="font-bold mb-1">Error al enviar el mensaje</p>
-                                    <p>Hubo un problema al conectar con el servidor. Por favor, revisa tu conexión a internet o contáctanos por teléfono o email directo directamente mientras solucionamos el problema.</p>
+                                    <p>Hubo un problema al enviar el correo. Por favor, revisa tu conexión o contáctanos por teléfono/email mientras lo solucionamos.</p>
                                 </div>
                             </div>
                         )}
 
-                        <form onSubmit={handleSubmit} className="space-y-6" name="contacto-gadyt" data-netlify="true" data-netlify-honeypot="bot-field">
-                            {/* Inputs ocultos necesarios para Netlify Forms en React/Next.js */}
-                            <input type="hidden" name="form-name" value="contacto-gadyt" />
+                        <form onSubmit={handleSubmit} className="space-y-6">
+                            {/* Honeypot anti-spam */}
                             <p className="hidden">
                                 <label>
                                     No llenes esto si eres humano: <input name="bot-field" />

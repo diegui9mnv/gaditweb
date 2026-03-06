@@ -1,38 +1,147 @@
 import Image from "next/image";
 import Link from "next/link";
+import ServiciosInteractivos from "@/components/home/ServiciosInteractivos";
+
+const heroSlides = [
+  {
+    src: "/images/real/legionella.png",
+    alt: "Servicio técnico de control de legionella",
+  },
+  {
+    src: "/images/real/analisis-agua-potable.jpg",
+    alt: "Técnico realizando análisis de agua potable",
+  },
+  {
+    src: "/images/real/zona-inundada.jpg",
+    alt: "Intervención técnica de limpieza y desinfección",
+  },
+  {
+    src: "/images/real/analisis-piscina.jpg",
+    alt: "Control de calidad del agua en piscina",
+  },
+  {
+    src: "/images/real/desinfeccion.png",
+    alt: "Desinfección profesional de redes de agua",
+  },
+  {
+    src: "/images/real/gestion.jpeg",
+    alt: "Mantenimiento técnico de instalaciones de agua",
+  },
+  {
+    src: "/images/real/deposito-sucio-2.jpg",
+    alt: "Inspección de aljibe con necesidad de higienización",
+  },
+];
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative bg-slate-900 text-white overflow-hidden py-24 lg:py-32">
-        <div className="absolute inset-0 bg-blue-900/20 z-0"></div>
-        {/* We can use a generated background image here later, for now we will use a solid gradient */}
-        <div className="absolute top-0 inset-x-0 h-full bg-gradient-to-br from-slate-900 via-blue-900/40 to-slate-900 z-0"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center md:text-left">
-          <div className="md:w-2/3">
-            <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6">
-              Gestión Integral del Agua y <span className="text-blue-400">Prevención de Legionella</span>
-            </h1>
-            <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl">
-              Soluciones adaptadas y eficientes para minimizar riesgos microbiológicos, garantizando espacios seguros en hoteles, centros deportivos, gimnasios, spas y sistemas de ACS.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 items-center md:items-start">
-              <Link href="/contacto" className="bg-blue-600 hover:bg-blue-500 text-white font-semibold px-8 py-3 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 w-full sm:w-auto text-center">
-                Pedir Presupuesto Sin Compromiso
-              </Link>
-              <Link href="/servicios/control-legionella" className="bg-transparent border-2 border-slate-600 hover:border-slate-400 text-white font-semibold px-8 py-3 rounded-full transition-all w-full sm:w-auto text-center">
-                Conoce Nuestros Servicios
-              </Link>
+      <section className="relative bg-slate-900 text-white overflow-hidden py-20 md:py-24 lg:py-32">
+        <div className="absolute inset-0 z-0">
+          {heroSlides.map((slide, index) => (
+            <div
+              key={slide.src}
+              className={`hero-slide ${index === 0 ? "hero-slide-first" : ""}`}
+              style={{ animationDelay: `${index * 5}s` }}
+            >
+              <Image
+                src={slide.src}
+                alt={slide.alt}
+                fill
+                priority={index === 0}
+                className="object-cover"
+                sizes="100vw"
+              />
             </div>
+          ))}
+        </div>
+        <div className="absolute inset-0 bg-slate-900/65 z-0"></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900/35 to-slate-900 z-0"></div>
+        <div className="absolute inset-0 hero-grid-overlay z-0"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
+            <div className="lg:col-span-7 text-center md:text-left">
+              <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
+                <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider bg-amber-500/85 text-slate-950 px-3 py-1 rounded-full">
+                  Asesoría prioritaria 24h
+                </span>
+                <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider bg-blue-600/70 px-3 py-1 rounded-full">
+                  ROESBA 1380-AND-750
+                </span>
+                <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider bg-slate-700/80 px-3 py-1 rounded-full">
+                  Manilva · Estepona · Sotogrande · Marbella
+                </span>
+              </div>
+
+              <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight">
+                Control de Legionella y
+                <br />
+                <span className="text-cyan-300">Desinfecciones de Agua en Costa del Sol</span>
+              </h1>
+              <p className="text-lg md:text-2xl text-slate-100 mb-8 max-w-3xl">
+                Servicio técnico en toda la <strong>Costa del Sol</strong> para control de Legionella, desinfecciones de agua, piscinas y aljibes, con cobertura reforzada en <strong>Marbella, Estepona, Manilva y Sotogrande</strong>.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 items-center md:items-start">
+                <Link href="/contacto" className="bg-blue-600 hover:bg-blue-500 text-white font-bold px-8 py-3.5 rounded-full transition-all shadow-lg hover:shadow-blue-500/30 w-full sm:w-auto text-center">
+                  Pedir Presupuesto
+                </Link>
+                <a href="tel:+34667752702" className="bg-white text-slate-900 hover:bg-slate-100 font-bold px-8 py-3.5 rounded-full transition-all shadow-lg w-full sm:w-auto text-center">
+                  Llamar Ahora
+                </a>
+                <Link href="/#seleccion-inteligente" className="bg-transparent border-2 border-slate-500 hover:border-slate-300 text-white font-semibold px-8 py-3.5 rounded-full transition-all w-full sm:w-auto text-center">
+                  Ver Servicios
+                </Link>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 mt-7">
+                <div className="bg-slate-900/55 border border-slate-600 rounded-xl px-4 py-3">
+                  <p className="text-sm font-semibold text-white">Plan personalizado</p>
+                  <p className="text-xs text-slate-300">Ajustado a tu instalación real</p>
+                </div>
+                <div className="bg-slate-900/55 border border-slate-600 rounded-xl px-4 py-3">
+                  <p className="text-sm font-semibold text-white">Ejecución + acta</p>
+                  <p className="text-xs text-slate-300">Todo trazado y documentado</p>
+                </div>
+                <div className="bg-slate-900/55 border border-slate-600 rounded-xl px-4 py-3">
+                  <p className="text-sm font-semibold text-white">Soporte continuo</p>
+                  <p className="text-xs text-slate-300">Seguimiento técnico experto</p>
+                </div>
+              </div>
+            </div>
+
+            <aside className="hidden lg:block lg:col-span-5">
+              <div className="bg-white/10 border border-white/25 rounded-2xl p-6 backdrop-blur-sm">
+                <p className="text-xs uppercase tracking-wider text-blue-200 font-bold mb-3">Servicio Premium GADYT</p>
+                <h3 className="text-2xl font-extrabold text-white mb-3">Hoja de ruta sanitaria completa</h3>
+                <p className="text-slate-200 leading-relaxed mb-5">
+                  Si tu instalación necesita garantías reales, diseñamos un plan técnico y documental de alto nivel para pasar de incertidumbre a control.
+                </p>
+                <ul className="space-y-3 text-slate-100 text-sm">
+                  <li className="flex items-start">
+                    <span className="mt-1 mr-2 h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+                    Auditoría inicial de puntos críticos.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mt-1 mr-2 h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+                    Plan de acciones con prioridad sanitaria.
+                  </li>
+                  <li className="flex items-start">
+                    <span className="mt-1 mr-2 h-2.5 w-2.5 rounded-full bg-cyan-300"></span>
+                    Entrega documental lista para auditoría.
+                  </li>
+                </ul>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
       {/* Trust & About Us Section */}
-      <section className="py-20 bg-white">
+      <section className="py-14 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
+          <div className="flex flex-col lg:flex-row items-center gap-14 md:gap-16">
             <div className="w-full lg:w-1/2">
               <h2 className="text-3xl font-bold text-slate-900 mb-6">Expertos en higiene y tecnología del agua</h2>
               <p className="text-slate-600 mb-4 leading-relaxed">
@@ -43,6 +152,9 @@ export default function Home() {
               </p>
               <p className="text-slate-600 mb-6 leading-relaxed font-semibold">
                 Protege tu instalación frente a la Legionella con el respaldo de un equipo especializado.
+              </p>
+              <p className="text-slate-700 mb-6 leading-relaxed">
+                Trabajamos de forma recurrente en <strong>Manilva, Estepona, Sotogrande y Marbella</strong>, además de otras zonas de Andalucía.
               </p>
 
               <div className="bg-blue-50 p-6 rounded-2xl mb-8 border border-blue-100">
@@ -60,7 +172,7 @@ export default function Home() {
                 </li>
               </ul>
             </div>
-            <div className="w-full lg:w-1/2 relative">
+            <div className="w-full lg:w-1/2 relative mt-10 md:mt-0">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <Image
                   src="/assets/furgoneta-gadyt.jpg"
@@ -85,16 +197,16 @@ export default function Home() {
       </section>
 
       {/* Services Overview Section */}
-      <section className="py-20 bg-slate-50 border-t border-slate-100">
+      <section className="py-14 md:py-20 bg-slate-50 border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Nuestros Servicios Especializados</h2>
             <p className="text-slate-600">
               Ofrecemos soluciones técnicas y sanitarias avanzadas para el control del agua y superficies. Cubrimos las necesidades de comunidades, hoteles, industria y promociones de obra nueva.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-5 md:gap-8 max-w-5xl mx-auto">
             {/* Service 1 */}
             <Link href="/servicios/control-legionella" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
@@ -105,7 +217,7 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path></svg>
                 </div>
@@ -129,7 +241,7 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path></svg>
                 </div>
@@ -153,7 +265,7 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path></svg>
                 </div>
@@ -177,7 +289,7 @@ export default function Home() {
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
               </div>
-              <div className="p-8">
+              <div className="p-6 md:p-8">
                 <div className="bg-blue-50 w-12 h-12 rounded-xl flex items-center justify-center text-blue-600 mb-6">
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"></path></svg>
                 </div>
@@ -194,14 +306,16 @@ export default function Home() {
         </div>
       </section>
 
+      <ServiciosInteractivos />
+
       {/* Analysis Services Section - Premium Artistic Look */}
-      <section className="py-24 relative overflow-hidden bg-white">
+      <section className="py-16 md:py-24 relative overflow-hidden bg-white">
         {/* Decorative background elements */}
         <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
         <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-blue-100 rounded-full blur-3xl opacity-30"></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="flex flex-col md:flex-row items-end justify-between mb-16 gap-6">
+          <div className="flex flex-col md:flex-row items-end justify-between mb-10 md:mb-16 gap-6">
             <div className="max-w-2xl">
               <h2 className="text-4xl font-extrabold text-slate-900 mb-4 tracking-tight">
                 Análisis: <span className="text-blue-600">Piscinas y Agua Potable</span>
@@ -213,12 +327,12 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             {/* Piscina Section */}
             <Link href="/servicios/analisis-piscinas" className="relative group block h-full">
               <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
               <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-56 md:h-72 overflow-hidden">
                   <Image
                     src="/images/real/piscina1.png"
                     alt="Técnico realizando análisis de agua en piscina"
@@ -231,7 +345,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold">Análisis de Piscinas</h3>
                   </div>
                 </div>
-                <div className="p-8 flex-grow flex flex-col">
+                <div className="p-6 md:p-8 flex-grow flex flex-col">
                   <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                     En GADYT, nos encargamos de realizar los análisis de agua en tu piscina, para garantizar su calidad y el cumplimiento de la normativa vigente. Contamos con equipos de medición avanzados y trabajamos con laboratorios acreditados para evaluar los principales parámetros físico-químicos y microbiológicos del agua.
                   </p>
@@ -249,7 +363,7 @@ export default function Home() {
             <Link href="/servicios/analisis-potable" className="relative group block h-full">
               <div className="absolute inset-0 bg-gradient-to-r from-green-600 to-emerald-400 rounded-3xl blur-xl opacity-0 group-hover:opacity-10 transition-opacity duration-500"></div>
               <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
-                <div className="relative h-72 overflow-hidden">
+                <div className="relative h-56 md:h-72 overflow-hidden">
                   <Image
                     src="/images/real/potable1.png"
                     alt="Muestreo de agua potable para análisis sanitario"
@@ -262,7 +376,7 @@ export default function Home() {
                     <h3 className="text-2xl font-bold">Agua Potable</h3>
                   </div>
                 </div>
-                <div className="p-8 flex-grow flex flex-col">
+                <div className="p-6 md:p-8 flex-grow flex flex-col">
                   <p className="text-slate-600 leading-relaxed mb-6 flex-grow">
                     En GADYT, realizamos análisis de agua potable para garantizar su calidad y seguridad, cumpliendo con los requisitos del Real Decreto 3/2023, que establece los criterios sanitarios de la calidad del agua de consumo humano.
                   </p>
@@ -280,9 +394,9 @@ export default function Home() {
       </section>
 
       {/* Field Work Gallery Section */}
-      <section className="py-20 bg-white border-t border-slate-100">
+      <section className="py-14 md:py-20 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
+          <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Nuestro Trabajo en Campo</h2>
             <p className="text-slate-600">
               Imágenes reales de las intervenciones de nuestro equipo técnico en Andalucía. Aportamos total transparencia y demostramos nuestra experiencia resolviendo problemas en las condiciones más difíciles.
@@ -306,7 +420,7 @@ export default function Home() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-24 bg-blue-600 relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-blue-600 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
           <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
             <path d="M0,0 L100,0 L100,100 L0,100 Z" fill="url(#grid)" />

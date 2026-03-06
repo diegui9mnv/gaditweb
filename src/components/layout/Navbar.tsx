@@ -10,10 +10,17 @@ export default function Navbar() {
   return (
     <nav className="fixed w-full z-50 bg-white shadow-sm border-b border-gray-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16 md:h-20">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="flex items-center gap-2">
-              <Image src="/assets/logo-gadyt.jpg" alt="GADYT Logo" width={140} height={45} className="object-contain" priority />
+              <Image
+                src="/assets/logo-gadyt.jpg"
+                alt="GADYT Logo"
+                width={140}
+                height={45}
+                className="object-contain w-[118px] md:w-[140px] h-auto"
+                priority
+              />
             </Link>
           </div>
           <div className="hidden md:flex items-center space-x-8">
@@ -74,59 +81,59 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Menu */}
-      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100 border-t border-gray-100' : 'max-h-0 opacity-0 overflow-hidden'}`}>
-        <div className="px-4 pt-2 pb-6 space-y-1 bg-white shadow-lg">
+      <div className={`md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'max-h-[calc(100vh-4rem)] opacity-100 border-t border-gray-100 overflow-y-auto' : 'max-h-0 opacity-0 overflow-hidden'}`}>
+        <div className="px-4 pt-1 pb-4 space-y-1 bg-white shadow-lg">
           <Link
             href="/"
-            className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+            className="block px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
             onClick={() => setIsOpen(false)}
           >
             Inicio
           </Link>
-          <div className="py-2">
+          <div className="py-1.5">
             <p className="px-3 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Servicios</p>
             <Link
               href="/servicios/control-legionella"
-              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Control de Legionella
             </Link>
             <Link
               href="/servicios/desinfecciones"
-              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Desinfecciones Técnicas
             </Link>
             <Link
               href="/servicios/limpieza-aljibes"
-              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Limpieza de Aljibes
             </Link>
             <Link
               href="/servicios/gestion-del-agua"
-              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Gestión del Agua
             </Link>
           </div>
 
-          <div className="py-2">
+          <div className="py-1.5">
             <p className="px-3 py-2 text-xs font-semibold text-slate-400 uppercase tracking-wider">Análisis</p>
             <Link
               href="/servicios/analisis-piscinas"
-              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Piscinas
             </Link>
             <Link
               href="/servicios/analisis-potable"
-              className="block px-6 py-2 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
               onClick={() => setIsOpen(false)}
             >
               Agua potable
@@ -134,19 +141,19 @@ export default function Navbar() {
           </div>
           <Link
             href="/normativa"
-            className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+            className="block px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
             onClick={() => setIsOpen(false)}
           >
             Normativa
           </Link>
           <Link
             href="/contacto"
-            className="block px-3 py-3 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+            className="block px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
             onClick={() => setIsOpen(false)}
           >
             Contacto
           </Link>
-          <div className="pt-4">
+          <div className="pt-3">
             <Link
               href="/contacto"
               className="block w-full text-center bg-blue-600 text-white px-6 py-3 rounded-xl font-bold"
