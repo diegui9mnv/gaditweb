@@ -24,10 +24,11 @@ export default function Contacto() {
 
     const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
+        const form = e.currentTarget;
         setStatus("submitting");
 
         try {
-            const formData = new FormData(e.currentTarget);
+            const formData = new FormData(form);
             const botField = getField(formData, "bot-field");
 
             // Honeypot anti-spam: si se rellena, simulamos éxito y no enviamos nada.
@@ -107,7 +108,7 @@ export default function Contacto() {
             });
 
             if (response.ok) {
-                e.currentTarget.reset();
+                form.reset();
                 setStatus("success");
             } else {
                 const errorBody = await response.text();
