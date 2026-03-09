@@ -51,19 +51,19 @@ export default function Desinfecciones() {
                         <div className="lg:w-1/2 order-2 lg:order-1">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">Higienización y Bioseguridad</h2>
                             <p className="text-slate-600 mb-4 leading-relaxed">
-                                Nuestros servicios de higienización de redes de agua están diseñados para eliminar eficazmente la carga microbiana y garantizar un entorno seguro para trabajadores y usuarios. Para ello, empleamos exclusivamente biocidas autorizados por el Ministerio de Sanidad, aplicados mediante sistemas de nebulización y pulverización que aseguran que el tratamiento alcance todos los puntos críticos de la instalación, desde los depósitos hasta los puntos terminales.
+                                Ofrecemos servicios profesionales de <strong>desinfección de redes de agua</strong> en Estepona, Manilva, Sotogrande y Marbella, especializados en la higienización de instalaciones hidráulicas antes de su puesta en servicio. Nuestros tratamientos eliminan eficazmente la <strong>carga microbiológica</strong> presente en tuberías, depósitos y puntos terminales, garantizando un <strong>entorno seguro</strong> para usuarios y trabajadores.
                             </p>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                Especializados en el sector de la construcción, ejecutamos la desinfección técnica de redes y depósitos en promociones de obra nueva y activos residenciales de <strong>Manilva, Estepona, Sotogrande y Marbella</strong>. Nos encargamos íntegramente de la gestión y tramitación de la documentación sanitaria necesaria para la obtención de la licencia de primera ocupación, asegurando que los sistemas hídricos cumplen con los estándares de salubridad exigidos por la administración local antes de su puesta en marcha.
+                                Para la desinfección de redes de agua para primera ocupación, utilizamos exclusivamente <strong>biocidas autorizados por el Ministerio de Sanidad</strong>, aplicados mediante sistemas de recirculación, nebulización o pulverización que permiten que el tratamiento alcance <strong>todos los puntos críticos</strong> de la instalación, desde los aljibes y depósitos hasta grifos, duchas y otros puntos de consumo.
+                            </p>
+                            <p className="text-slate-600 mb-6 leading-relaxed">
+                                Estamos especialmente especializados en desinfección de redes de agua en <strong>obra nueva y promociones inmobiliarias</strong> en Estepona, Marbella, Sotogrande y Manilva. Realizamos la desinfección técnica de las instalaciones hidráulicas antes de su entrega, un requisito habitual para la obtención de la <strong>licencia de primera ocupación</strong> y la puesta en funcionamiento de las redes de abastecimiento.
+                            </p>
+                            <p className="text-slate-600 mb-6 leading-relaxed">
+                                Además, nos encargamos de la <strong>gestión y tramitación de la documentación sanitaria</strong> necesaria, asegurando que las redes de agua cumplen con los estándares de higiene y salubridad exigidos por la normativa vigente y por las administraciones locales.
                             </p>
                             <p className="text-slate-600 mb-8 leading-relaxed">
-                                Una vez finalizada cada intervención, formalizamos el acta sanitaria oficial que acredita la correcta ejecución de los protocolos de limpieza y desinfección según la normativa vigente. Este rigor en la trazabilidad documental permite a nuestros clientes disponer de toda la información técnica necesaria para el mantenimiento preventivo de sus instalaciones y la seguridad de sus redes hídricas.
-                            </p>
-                            <p className="text-slate-700 mb-8 leading-relaxed">
-                                Para búsquedas como <strong>desinfecciones de agua Manilva</strong> o <strong>desinfeccion de piscinas Estepona</strong>, ofrecemos intervención técnica y soporte documental integral.
-                            </p>
-                            <p className="text-slate-800 mb-8 leading-relaxed font-medium bg-teal-50 border border-teal-100 rounded-xl p-4">
-                                Nuestro objetivo es que tu instalación quede <strong>desinfectada, documentada y lista para avanzar</strong> sin retrasos innecesarios.
+                                Una vez finalizada la intervención, emitimos el <strong>acta sanitaria y certificado de desinfección</strong> de la red de agua, documento que acredita la correcta ejecución de los trabajos y que es requerido frecuentemente por técnicos municipales, direcciones facultativas y promotores para completar los trámites de primera ocupación y garantizar la seguridad sanitaria de la instalación.
                             </p>
                             <Link href="/contacto" className="inline-block bg-teal-600 hover:bg-teal-700 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md">
                                 Solicitar Presupuesto

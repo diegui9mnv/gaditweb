@@ -5,12 +5,14 @@ import React, { useState } from "react";
 const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
 
 const EMAILJS_SERVICE_ID =
-    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_xo5bf8w";
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_0yu2m5t";
 const EMAILJS_TEMPLATE_ID =
     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_u1cxi2n";
 const EMAILJS_PUBLIC_KEY =
     process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "Mn0yoeke1tUVqDz29";
 const CONTACT_TO_EMAIL = process.env.NEXT_PUBLIC_CONTACT_TO_EMAIL || "contacto@gadyt.es";
+const CONTACT_FROM_EMAIL = process.env.NEXT_PUBLIC_CONTACT_FROM_EMAIL || "contacto@gadyt.es";
+const CONTACT_FROM_NAME = process.env.NEXT_PUBLIC_CONTACT_FROM_NAME || "Web GADYT";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
 
@@ -93,6 +95,8 @@ export default function Contacto() {
                     user_id: EMAILJS_PUBLIC_KEY,
                     template_params: {
                         to_email: CONTACT_TO_EMAIL,
+                        sender_name: CONTACT_FROM_NAME,
+                        sender_email: CONTACT_FROM_EMAIL,
                         from_name: name,
                         company,
                         from_email: email,

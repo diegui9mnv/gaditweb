@@ -1,4 +1,4 @@
-import Image from "next/image";
+﻿import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
@@ -57,7 +57,7 @@ export default function ControlLegionella() {
                                 Al finalizar cada actuación, emitimos el certificado oficial de limpieza y desinfección conforme a las exigencias legales, encargándonos además de ejecutar el plan de muestreo y análisis de agua necesario para asegurar la correcta trazabilidad documental y el mantenimiento óptimo de tus instalaciones.
                             </p>
                             <p className="text-slate-700 mb-6 leading-relaxed">
-                                Si estás buscando <strong>control legionella Marbella</strong> o <strong>control legionella Estepona</strong>, trabajamos con protocolos técnicos completos y cobertura también en Sotogrande.
+                                Si buscas control legionella en Marbella, Manilva, Estepona o Sotogrande, trabajamos con protocolos técnicos completos en toda la zona.
                             </p>
                             <p className="text-slate-800 mb-6 leading-relaxed font-medium bg-blue-50 border border-blue-100 rounded-xl p-4">
                                 Nuestro enfoque combina <strong>prevención real + documentación sólida</strong>, clave para evitar sanciones y minimizar riesgos operativos.
@@ -87,7 +87,7 @@ export default function ControlLegionella() {
                         <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/legionella.png"
+                                    src="/images/real/despiscina.png"
                                     alt="Control de Legionella"
                                     fill
                                     className="object-cover"
@@ -106,3 +106,4 @@ export default function ControlLegionella() {
         </div>
     );
 }
+

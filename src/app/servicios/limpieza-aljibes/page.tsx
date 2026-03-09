@@ -6,7 +6,7 @@ import ServiceAccordion from "@/components/services/ServiceAccordion";
 export const metadata: Metadata = {
     title: "Limpieza y Desinfección de Aljibes | GADYT",
     description:
-        "Servicio profesional de limpieza de aljibes en Manilva, Sotogrande y Marbella, incluyendo limpieza de algibes Estepona con cumplimiento del RD 487/2022.",
+        "Servicio profesional de limpieza de aljibes en Manilva, Sotogrande y Marbella, incluyendo limpieza de aljibes en Estepona con cumplimiento del RD 487/2022.",
 };
 
 const limpiezaFaq = [
@@ -51,19 +51,16 @@ export default function LimpiezaAljibes() {
                         <div className="lg:w-1/2 order-2 lg:order-1">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">Potabilidad y Seguridad Hídrica</h2>
                             <p className="text-slate-600 mb-4 leading-relaxed">
-                                Nuestra intervención garantiza la <strong>potabilidad y salubridad</strong> del agua, permitiendo que los residentes y usuarios finales dispongan de un suministro en condiciones óptimas de seguridad y confianza. Todas nuestras actuaciones en depósitos de agua siguen estrictamente las directrices técnicas marcadas por el Real Decreto 487/2022 para la prevención de la Legionella.
+                                Nuestra empresa está especializada en la limpieza y desinfección de aljibes y depósitos de agua en Estepona, Sotogrande, Marbella y Manilva, garantizando que el agua almacenada mantenga las condiciones adecuadas de <strong>potabilidad, higiene y seguridad</strong> para los usuarios finales. Nuestro servicio permite que comunidades de propietarios, urbanizaciones, hoteles y complejos residenciales dispongan de un suministro de agua en óptimas condiciones sanitarias.
                             </p>
                             <p className="text-slate-600 mb-6 leading-relaxed">
-                                El proceso incluye la eliminación de lodos, incrustaciones y biopelículas donde proliferan los patógenos, empleando métodos de desinfección mecánica y química que protegen la integridad de las instalaciones y la salud pública.
+                                Todas nuestras actuaciones de limpieza de aljibes en la Costa del Sol se realizan siguiendo estrictamente las directrices técnicas establecidas por el <strong>Real Decreto 487/2022</strong> para la prevención y control de la Legionella, asegurando el cumplimiento de la normativa sanitaria vigente.
                             </p>
-                            <p className="text-slate-600 mb-8 leading-relaxed">
-                                Al finalizar las tareas de mantenimiento, formalizamos el acta técnica y la validación sanitaria correspondiente que acredita la correcta higienización del aljibe. Este documento oficial asegura que la instalación cumple con la normativa vigente y facilita a los administradores de fincas y responsables de mantenimiento la trazabilidad necesaria ante cualquier requerimiento de las autoridades sanitarias.
+                            <p className="text-slate-600 mb-6 leading-relaxed">
+                                El proceso de mantenimiento incluye la <strong>eliminación de lodos, sedimentos, incrustaciones de cal y biopelículas</strong>, que son los principales focos de proliferación de bacterias y patógenos. Para ello aplicamos procedimientos de limpieza mecánica y desinfección química específicos para depósitos de agua, respetando siempre la integridad de las instalaciones y protegiendo la salud pública.
                             </p>
                             <p className="text-slate-700 mb-8 leading-relaxed">
-                                También cubrimos necesidades asociadas a la búsqueda <strong>limpieza de algibes Estepona</strong>, además de servicios de limpieza de aljibes en el resto de la Costa del Sol.
-                            </p>
-                            <p className="text-slate-800 mb-8 leading-relaxed font-medium bg-blue-50 border border-blue-100 rounded-xl p-4">
-                                Si gestionas inmuebles en <strong>Manilva, Estepona, Sotogrande o Marbella</strong>, este servicio es una forma directa de reforzar la seguridad del agua y evitar incidencias evitables.
+                                Al finalizar cada servicio de limpieza de aljibes, emitimos el correspondiente <strong>acta técnica y certificado de higienización</strong>, que acredita que el depósito ha sido correctamente desinfectado y cumple con la normativa sanitaria. Esta documentación facilita a administradores de fincas, gestores de mantenimiento y responsables de instalaciones la trazabilidad necesaria ante cualquier inspección o requerimiento de las autoridades sanitarias.
                             </p>
                             <div className="mt-8">
                                 <Link href="/contacto" className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-3 rounded-full transition-colors shadow-md">
@@ -74,7 +71,7 @@ export default function LimpiezaAljibes() {
                         <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/algibe.png"
+                                    src="/images/real/legionella.png"
                                     alt="Limpieza de aljibes"
                                     fill
                                     className="object-cover"

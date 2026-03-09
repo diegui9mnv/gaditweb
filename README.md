@@ -37,10 +37,14 @@ Variables de entorno necesarias (ver `.env.example`):
 - `NEXT_PUBLIC_EMAILJS_TEMPLATE_ID`
 - `NEXT_PUBLIC_EMAILJS_PUBLIC_KEY`
 - `NEXT_PUBLIC_CONTACT_TO_EMAIL` (correo de destino, por ejemplo el del jefe)
+- `NEXT_PUBLIC_CONTACT_FROM_EMAIL` (correo remitente verificado en proveedor)
+- `NEXT_PUBLIC_CONTACT_FROM_NAME` (nombre del remitente)
 
 Parámetros enviados al template:
 
 - `to_email`
+- `sender_name`
+- `sender_email`
 - `from_name`
 - `company`
 - `from_email`

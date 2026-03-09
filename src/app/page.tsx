@@ -4,7 +4,7 @@ import ServiciosInteractivos from "@/components/home/ServiciosInteractivos";
 
 const heroSlides = [
   {
-    src: "/images/real/legionella.png",
+    src: "/images/real/despiscina.png",
     alt: "Servicio técnico de control de legionella",
   },
   {
@@ -211,7 +211,7 @@ export default function Home() {
             <Link href="/servicios/control-legionella" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/legionella.png"
+                  src="/images/real/despiscina.png"
                   alt="Control de Legionella"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
@@ -259,7 +259,7 @@ export default function Home() {
             <Link href="/servicios/limpieza-aljibes" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/algibe.png"
+                  src="/images/real/legionella.png"
                   alt="Limpieza de Aljibes"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
