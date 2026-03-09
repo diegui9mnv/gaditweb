@@ -5,7 +5,7 @@ import React, { useState } from "react";
 const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
 
 const EMAILJS_SERVICE_ID =
-    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_0yu2m5t";
+    process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID || "service_7sw63ha";
 const EMAILJS_TEMPLATE_ID =
     process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID || "template_u1cxi2n";
 const EMAILJS_PUBLIC_KEY =
