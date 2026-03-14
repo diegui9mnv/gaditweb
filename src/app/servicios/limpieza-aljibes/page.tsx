@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
+import ServiceImageCarousel from "@/components/services/ServiceImageCarousel";
 
 export const metadata: Metadata = {
     title: "Limpieza y Desinfección de Aljibes | GADYT",
@@ -24,6 +24,33 @@ const limpiezaFaq = [
         title: "¿En qué zonas prestáis este servicio de forma habitual?",
         content:
             "Trabajamos con frecuencia en Manilva, Estepona, Sotogrande y Marbella, además de otras zonas de la Costa del Sol.",
+    },
+];
+
+const limpiezaCarouselImages = [
+    {
+        src: "/images/real/limpieza01.jpeg",
+        alt: "Limpieza de aljibe en fase de vaciado y preparación",
+    },
+    {
+        src: "/images/real/limpieza02.jpeg",
+        alt: "Intervención técnica de limpieza interior de aljibe",
+    },
+    {
+        src: "/images/real/limpieza03.jpeg",
+        alt: "Proceso de higienización y desinfección de depósito",
+    },
+    {
+        src: "/images/real/limpieza04.jpeg",
+        alt: "Equipo técnico realizando mantenimiento de aljibe",
+    },
+    {
+        src: "/images/real/limpieza05.jpeg",
+        alt: "Resultado tras la limpieza profesional del aljibe",
+    },
+    {
+        src: "/images/real/legionella.png",
+        alt: "Control preventivo de legionella en instalación de agua",
     },
 ];
 
@@ -69,14 +96,7 @@ export default function LimpiezaAljibes() {
                             </div>
                         </div>
                         <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full">
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
-                                <Image
-                                    src="/images/real/legionella.png"
-                                    alt="Limpieza de aljibes"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                            <ServiceImageCarousel images={limpiezaCarouselImages} />
                         </div>
                     </div>
                 </div>

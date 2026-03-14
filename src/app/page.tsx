@@ -1,19 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 import ServiciosInteractivos from "@/components/home/ServiciosInteractivos";
+import FieldWorkCarousel from "@/components/home/FieldWorkCarousel";
 
 const heroSlides = [
   {
     src: "/images/real/despiscina.png",
     alt: "Servicio técnico de control de legionella",
-  },
-  {
-    src: "/images/real/analisis-agua-potable.jpg",
-    alt: "Técnico realizando análisis de agua potable",
-  },
-  {
-    src: "/images/real/zona-inundada.jpg",
-    alt: "Intervención técnica de limpieza y desinfección",
   },
   {
     src: "/images/real/analisis-piscina.jpg",
@@ -30,6 +23,53 @@ const heroSlides = [
   {
     src: "/images/real/deposito-sucio-2.jpg",
     alt: "Inspección de aljibe con necesidad de higienización",
+  },
+];
+
+const fieldWorkImages = [
+  {
+    src: "/images/real/deposito-sucio-1.jpg",
+    alt: "Inspección de depósito de agua antes del vaciado y limpieza",
+  },
+  {
+    src: "/images/real/deposito-sucio-2.jpg",
+    alt: "Evaluación del lodo en aljibe deteriorado para su higienización",
+  },
+  {
+    src: "/images/real/limpieza01.jpeg",
+    alt: "Limpieza de aljibe en fase de vaciado",
+  },
+  {
+    src: "/images/real/limpieza02.jpeg",
+    alt: "Intervención técnica en interior de aljibe",
+  },
+  {
+    src: "/images/real/limpieza03.jpeg",
+    alt: "Proceso de higienización de depósito de agua",
+  },
+  {
+    src: "/images/real/limpieza04.jpeg",
+    alt: "Mantenimiento profesional de aljibe",
+  },
+  {
+    src: "/images/real/limpieza05.jpeg",
+    alt: "Estado final tras limpieza y desinfección de aljibe",
+  },
+  {
+    src: "/images/real/legionella.png",
+    alt: "Servicio de prevención y control de legionella",
+  },
+  {
+    src: "/images/real/filtros.jpeg",
+    alt: "Equipo de filtración para gestión del agua",
+  },
+  {
+    src: "/images/real/gestion.jpeg",
+    alt: "Mantenimiento técnico de instalaciones hidráulicas",
+  },
+  {
+    src: "/images/real/algibe.png",
+    alt: "Instalación de aljibe tratada por el equipo técnico",
   },
 ];
 
@@ -399,20 +439,7 @@ export default function Home() {
               Imágenes reales de las intervenciones de nuestro equipo técnico en Andalucía. Aportamos total transparencia y demostramos nuestra experiencia resolviendo problemas en las condiciones más difíciles.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md group">
-              <Image src="/images/real/analisis-agua-potable.jpg" alt="Análisis de agua en fuente" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-            </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md group">
-              <Image src="/images/real/zona-inundada.jpg" alt="Limpieza y desinfección de zona interior inundada" fill className="object-cover group-hover:scale-110 transition-transform duration-700" />
-            </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md group">
-              <Image src="/images/real/deposito-sucio-1.jpg" alt="Inspección de depósito de agua sucio antes del vaciado y limpieza" fill className="object-cover group-hover:scale-110 transition-transform duration-700 object-center" />
-            </div>
-            <div className="relative h-64 rounded-xl overflow-hidden shadow-md group">
-              <Image src="/images/real/deposito-sucio-2.jpg" alt="Evaluación del lodo en aljibe deteriorado para su posterior higienización" fill className="object-cover group-hover:scale-110 transition-transform duration-700 object-center" />
-            </div>
-          </div>
+          <FieldWorkCarousel images={fieldWorkImages} />
         </div>
       </section>
 

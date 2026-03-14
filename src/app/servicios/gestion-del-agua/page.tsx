@@ -1,7 +1,7 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Metadata } from "next";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
+import ServiceImageCarousel from "@/components/services/ServiceImageCarousel";
 
 export const metadata: Metadata = {
     title: "Gestión Integral del Agua y Mantenimiento de Aljibes | GADYT",
@@ -24,6 +24,21 @@ const gestionFaq = [
         title: "¿Atendéis comunidades y hoteles de la zona?",
         content:
             "Sí, operamos con frecuencia en Manilva, Estepona, Sotogrande y Marbella, adaptando el servicio al tipo de instalación y uso.",
+    },
+];
+
+const gestionCarouselImages = [
+    {
+        src: "/images/real/filtros.jpeg",
+        alt: "Sistema de filtrado para gestión técnica del agua",
+    },
+    {
+        src: "/images/real/gestion.jpeg",
+        alt: "Mantenimiento integral de instalaciones de agua",
+    },
+    {
+        src: "/images/real/algibe.png",
+        alt: "Depósito de agua en servicio de gestión y control",
     },
 ];
 
@@ -69,14 +84,7 @@ export default function GestionAgua() {
                             </div>
                         </div>
                         <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full">
-                            <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
-                                <Image
-                                    src="/images/real/gestion.jpeg"
-                                    alt="Gestión del agua"
-                                    fill
-                                    className="object-cover"
-                                />
-                            </div>
+                            <ServiceImageCarousel images={gestionCarouselImages} />
                         </div>
                     </div>
                 </div>
