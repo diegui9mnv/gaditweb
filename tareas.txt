@@ -1,0 +1,4 @@
+- Cambiar numero de teléfono en Brevo (actualmente mio)
+- Cuenta de netlify (traspasar variables)
+- Hacer cuenta en EmailJS (opcional)
+- Aprobación ¿?

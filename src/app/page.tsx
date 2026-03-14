@@ -63,9 +63,6 @@ export default function Home() {
           <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 items-end">
             <div className="lg:col-span-7 text-center md:text-left">
               <div className="flex flex-wrap gap-2 justify-center md:justify-start mb-5">
-                <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider bg-amber-500/85 text-slate-950 px-3 py-1 rounded-full">
-                  Asesoría prioritaria 24h
-                </span>
                 <span className="inline-flex items-center text-xs font-semibold uppercase tracking-wider bg-blue-600/70 px-3 py-1 rounded-full">
                   ROESBA 1380-AND-750
                 </span>
