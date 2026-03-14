@@ -1,0 +1,8 @@
+# Legacy WordPress-like slugs -> new site pages
+/legionella /servicios/control-legionella 301
+/analisis /servicios/analisis-piscinas 301
+/agua-potable /servicios/analisis-potable 301
+/aljibes /servicios/limpieza-aljibes 301
+/plan-de-prevencion-y-control-de-legionella /servicios/control-legionella 301
+/plan-de-autocontrol-de-piscinas /servicios/analisis-piscinas 301
+/tramitacion-de-autorizaciones-de-vertido /contacto 301
