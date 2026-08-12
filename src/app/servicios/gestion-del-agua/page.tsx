@@ -1,13 +1,16 @@
 import Link from "next/link";
-import { Metadata } from "next";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
 import ServiceImageCarousel from "@/components/services/ServiceImageCarousel";
+import RelatedServices from "@/components/services/RelatedServices";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Gestión Integral del Agua y Mantenimiento de Aljibes | GADYT",
+export const metadata = createPageMetadata({
+    title: "Gestión Integral del Agua y Mantenimiento",
     description:
         "Gestión integral del agua en Manilva, Estepona, Sotogrande y Marbella: cloración automática, mantenimiento hidráulico y soporte técnico continuo.",
-};
+    path: "/servicios/gestion-del-agua",
+});
 
 const gestionFaq = [
     {
@@ -29,15 +32,15 @@ const gestionFaq = [
 
 const gestionCarouselImages = [
     {
-        src: "/images/real/filtros.jpeg",
+        src: "/images/real/filtros.webp",
         alt: "Sistema de filtrado para gestión técnica del agua",
     },
     {
-        src: "/images/real/gestion.jpeg",
+        src: "/images/real/gestion.webp",
         alt: "Mantenimiento integral de instalaciones de agua",
     },
     {
-        src: "/images/real/algibe.png",
+        src: "/images/real/algibe.webp",
         alt: "Depósito de agua en servicio de gestión y control",
     },
 ];
@@ -48,6 +51,7 @@ export default function GestionAgua() {
             <section className="bg-slate-900 py-14 md:py-20 text-white relative">
                 <div className="absolute inset-0 bg-blue-800/20 z-0"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <Breadcrumbs current={{ name: "Gestión del Agua", path: "/servicios/gestion-del-agua" }} />
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                         GESTIÓN DEL AGUA
                     </h1>
@@ -89,6 +93,21 @@ export default function GestionAgua() {
                     </div>
                 </div>
             </section>
+
+            <RelatedServices
+                services={[
+                    {
+                        name: "Limpieza de aljibes",
+                        description: "Limpieza, desinfección y documentación técnica para depósitos de agua.",
+                        href: "/servicios/limpieza-aljibes",
+                    },
+                    {
+                        name: "Análisis de agua en piscinas",
+                        description: "Control de parámetros e informes para instalaciones acuáticas.",
+                        href: "/servicios/analisis-piscinas",
+                    },
+                ]}
+            />
 
             <ServiceAccordion
                 heading="Preguntas Frecuentes de Gestión del Agua"

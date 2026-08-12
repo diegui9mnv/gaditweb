@@ -2,73 +2,80 @@ import Image from "next/image";
 import Link from "next/link";
 import ServiciosInteractivos from "@/components/home/ServiciosInteractivos";
 import FieldWorkCarousel from "@/components/home/FieldWorkCarousel";
+import { createPageMetadata, HOME_TITLE, SITE_DESCRIPTION } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: HOME_TITLE,
+  description: SITE_DESCRIPTION,
+  path: "/",
+});
 
 const heroSlides = [
   {
-    src: "/images/real/despiscina.png",
+    src: "/images/real/despiscina.webp",
     alt: "Servicio técnico de control de legionella",
   },
   {
-    src: "/images/real/analisis-piscina.jpg",
+    src: "/images/real/analisis-piscina.webp",
     alt: "Control de calidad del agua en piscina",
   },
   {
-    src: "/images/real/desinfeccion.png",
+    src: "/images/real/desinfeccion.webp",
     alt: "Desinfección profesional de redes de agua",
   },
   {
-    src: "/images/real/gestion.jpeg",
+    src: "/images/real/gestion.webp",
     alt: "Mantenimiento técnico de instalaciones de agua",
   },
   {
-    src: "/images/real/deposito-sucio-2.jpg",
+    src: "/images/real/deposito-sucio-2.webp",
     alt: "Inspección de aljibe con necesidad de higienización",
   },
 ];
 
 const fieldWorkImages = [
   {
-    src: "/images/real/deposito-sucio-1.jpg",
+    src: "/images/real/deposito-sucio-1.webp",
     alt: "Inspección de depósito de agua antes del vaciado y limpieza",
   },
   {
-    src: "/images/real/deposito-sucio-2.jpg",
+    src: "/images/real/deposito-sucio-2.webp",
     alt: "Evaluación del lodo en aljibe deteriorado para su higienización",
   },
   {
-    src: "/images/real/limpieza01.jpeg",
+    src: "/images/real/limpieza01.webp",
     alt: "Limpieza de aljibe en fase de vaciado",
   },
   {
-    src: "/images/real/limpieza02.jpeg",
+    src: "/images/real/limpieza02.webp",
     alt: "Intervención técnica en interior de aljibe",
   },
   {
-    src: "/images/real/limpieza03.jpeg",
+    src: "/images/real/limpieza03.webp",
     alt: "Proceso de higienización de depósito de agua",
   },
   {
-    src: "/images/real/limpieza04.jpeg",
+    src: "/images/real/limpieza04.webp",
     alt: "Mantenimiento profesional de aljibe",
   },
   {
-    src: "/images/real/limpieza05.jpeg",
+    src: "/images/real/limpieza05.webp",
     alt: "Estado final tras limpieza y desinfección de aljibe",
   },
   {
-    src: "/images/real/legionella.png",
+    src: "/images/real/legionella.webp",
     alt: "Servicio de prevención y control de legionella",
   },
   {
-    src: "/images/real/filtros.jpeg",
+    src: "/images/real/filtros.webp",
     alt: "Equipo de filtración para gestión del agua",
   },
   {
-    src: "/images/real/gestion.jpeg",
+    src: "/images/real/gestion.webp",
     alt: "Mantenimiento técnico de instalaciones hidráulicas",
   },
   {
-    src: "/images/real/algibe.png",
+    src: "/images/real/algibe.webp",
     alt: "Instalación de aljibe tratada por el equipo técnico",
   },
 ];
@@ -185,7 +192,7 @@ export default function Home() {
                 En GADYT, nuestro equipo combina la más avanzada tecnología con el cumplimiento del Real Decreto 487/2022, ofreciendo un enfoque integral en la gestión del agua potable y el tratamiento de Legionella. Este trabajo está liderado por Mario Jiménez, farmacéutico especialista en este ámbito.
               </p>
               <p className="text-slate-600 mb-4 leading-relaxed">
-                Te ayudamos a encontrar las soluciones más adecuadas para tu instalación, adaptadas a tus necesidades reales. Te asesoramos y acompañamos en cada paso para garantizar la seguridad y la calidad del agua. Cumple con todas las exigencias del Real Decreto 487/2022 de forma clara y sencilla.
+                Te ayudamos a encontrar las soluciones más adecuadas para tu instalación, adaptadas a tus necesidades reales. Te asesoramos y acompañamos para controlar la seguridad y la calidad del agua y aplicar los requisitos que correspondan del Real Decreto 487/2022.
               </p>
               <p className="text-slate-600 mb-6 leading-relaxed font-semibold">
                 Protege tu instalación frente a la Legionella con el respaldo de un equipo especializado.
@@ -201,7 +208,7 @@ export default function Home() {
               <ul className="space-y-3">
                 <li className="flex items-center text-slate-700">
                   <svg className="w-6 h-6 text-blue-500 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                  Atención rápida y desplazamientos garantizados.
+                  Atención ágil y cobertura habitual en la zona.
                 </li>
                 <li className="flex items-center text-slate-700">
                   <svg className="w-6 h-6 text-blue-500 mr-3 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
@@ -212,8 +219,8 @@ export default function Home() {
             <div className="w-full lg:w-1/2 relative mt-10 md:mt-0">
               <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3]">
                 <Image
-                  src="/assets/furgoneta-gadyt.jpg"
-                  alt="Vehículo oficial de GADYT acudiendo a un servicio"
+                  src="/assets/furgoneta-gadyt.webp"
+                  alt="Vehículo del equipo técnico de GADYT acudiendo a un servicio"
                   fill
                   className="object-cover"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -248,9 +255,10 @@ export default function Home() {
             <Link href="/servicios/control-legionella" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/despiscina.png"
+                  src="/images/real/despiscina.webp"
                   alt="Control de Legionella"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
@@ -272,9 +280,10 @@ export default function Home() {
             <Link href="/servicios/desinfecciones" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/desinfeccion.png"
+                  src="/images/real/desinfeccion.webp"
                   alt="Desinfecciones Técnicas"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
               </div>
@@ -284,7 +293,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Desinfecciones Técnicas</h3>
                 <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                  Desinfecciones técnicas con entrega de documentación sanitaria oficial, garantizando la bioseguridad.
+                  Desinfección de tuberías de obra civil, redes de abastecimiento y promociones de viviendas.
                 </p>
                 <div className="text-blue-600 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
                   Saber más <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
@@ -296,9 +305,10 @@ export default function Home() {
             <Link href="/servicios/limpieza-aljibes" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/legionella.png"
+                  src="/images/real/legionella.webp"
                   alt="Limpieza de Aljibes"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
               </div>
@@ -308,7 +318,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-bold text-slate-900 mb-3">Limpieza de Aljibes</h3>
                 <p className="text-slate-600 mb-4 text-sm leading-relaxed">
-                  Limpieza y desinfección de aljibes cumpliendo estrictamente con el RD 487/2022.
+                  Limpieza y desinfección de aljibes con criterios técnicos de prevención y control.
                 </p>
                 <div className="text-blue-600 font-medium group-hover:translate-x-1 transition-transform inline-flex items-center">
                   Saber más <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
@@ -320,9 +330,10 @@ export default function Home() {
             <Link href="/servicios/gestion-del-agua" className="bg-white rounded-2xl shadow-sm hover:shadow-xl transition-all border border-slate-100 overflow-hidden group">
               <div className="h-48 bg-blue-100 relative overflow-hidden">
                 <Image
-                  src="/images/real/gestion.jpeg"
+                  src="/images/real/gestion.webp"
                   alt="Gestión del Agua"
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500 object-center"
                 />
               </div>
@@ -340,6 +351,18 @@ export default function Home() {
               </div>
             </Link>
           </div>
+
+          <Link
+            href="/servicios/certificaciones-lpo"
+            className="group mx-auto mt-8 flex max-w-5xl flex-col items-start justify-between gap-5 rounded-2xl border border-teal-200 bg-teal-50 p-6 transition-all hover:border-teal-300 hover:shadow-lg sm:flex-row sm:items-center md:p-8"
+          >
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-teal-700">Obra nueva en Marbella y Estepona</span>
+              <h3 className="mt-2 text-2xl font-bold text-slate-900">Desinfección y certificado para LPO</h3>
+              <p className="mt-2 max-w-3xl text-slate-600">Desinfectamos la red de agua de promociones y documentamos la actuación para el expediente de primera ocupación cuando corresponda.</p>
+            </div>
+            <span className="shrink-0 font-bold text-teal-700 transition-transform group-hover:translate-x-1">Ver servicio →</span>
+          </Link>
         </div>
       </section>
 
@@ -359,7 +382,7 @@ export default function Home() {
               </h2>
               <div className="h-1.5 w-24 bg-blue-600 rounded-full mb-6"></div>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Garantizamos la seguridad y salubridad de sus instalaciones mediante controles rigurosos y metodologías certificadas.
+                Verificamos la calidad del agua mediante controles rigurosos y análisis con laboratorios acreditados.
               </p>
             </div>
           </div>
@@ -371,9 +394,10 @@ export default function Home() {
               <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
                 <div className="relative h-56 md:h-72 overflow-hidden">
                   <Image
-                    src="/images/real/piscina1.png"
+                    src="/images/real/piscina1.webp"
                     alt="Técnico realizando análisis de agua en piscina"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>
@@ -402,9 +426,10 @@ export default function Home() {
               <div className="relative bg-white rounded-3xl border border-slate-100 shadow-sm overflow-hidden flex flex-col h-full transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl">
                 <div className="relative h-56 md:h-72 overflow-hidden">
                   <Image
-                    src="/images/real/potable1.png"
+                    src="/images/real/potable1.webp"
                     alt="Muestreo de agua potable para análisis sanitario"
                     fill
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 to-transparent"></div>

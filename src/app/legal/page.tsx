@@ -1,10 +1,11 @@
-import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Aviso Legal | GADYT",
+export const metadata = createPageMetadata({
+  title: "Aviso Legal",
   description:
     "Aviso legal del sitio web gadyt.es: identificación del titular, condiciones de uso y responsabilidad.",
-};
+  path: "/legal",
+});
 
 export default function LegalPage() {
   return (

@@ -34,6 +34,7 @@ export default function Navbar() {
                 <div className="py-1">
                   <Link href="/servicios/control-legionella" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Control de Legionella</Link>
                   <Link href="/servicios/desinfecciones" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Desinfecciones Técnicas</Link>
+                  <Link href="/servicios/certificaciones-lpo" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Certificaciones LPO</Link>
                   <Link href="/servicios/limpieza-aljibes" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Limpieza de Aljibes</Link>
                   <Link href="/servicios/gestion-del-agua" className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600">Gestión del Agua</Link>
                 </div>
@@ -105,6 +106,13 @@ export default function Navbar() {
               onClick={() => setIsOpen(false)}
             >
               Desinfecciones Técnicas
+            </Link>
+            <Link
+              href="/servicios/certificaciones-lpo"
+              className="block px-6 py-1.5 text-base font-medium text-slate-700 hover:bg-slate-50 hover:text-blue-600 rounded-md"
+              onClick={() => setIsOpen(false)}
+            >
+              Certificaciones LPO
             </Link>
             <Link
               href="/servicios/limpieza-aljibes"

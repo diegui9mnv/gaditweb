@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
+import RelatedServices from "@/components/services/RelatedServices";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Análisis de Agua en Piscinas (RD 742/2013) | GADYT",
+export const metadata = createPageMetadata({
+    title: "Análisis de Agua en Piscinas",
     description:
-        "Análisis de piscinas en Manilva, Estepona, Sotogrande y Marbella. Cumple el RD 742/2013 con control físico-químico y microbiológico.",
-};
+        "Análisis de piscinas en Manilva, Estepona, Sotogrande y Marbella, con control físico-químico y microbiológico según el RD 742/2013.",
+    path: "/servicios/analisis-piscinas",
+});
 
 const piscinasFaq = [
     {
@@ -33,11 +36,12 @@ export default function AnalisisPiscinas() {
             <section className="bg-slate-900 py-14 md:py-20 text-white relative">
                 <div className="absolute inset-0 bg-blue-900/30 z-0"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <Breadcrumbs current={{ name: "Análisis de Piscinas", path: "/servicios/analisis-piscinas" }} />
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                         Análisis de Piscinas
                     </h1>
                     <p className="text-xl text-blue-100 max-w-3xl">
-                        Garantizamos la <strong>seguridad sanitaria</strong> de tu instalación mediante controles periódicos y analíticas especializadas, asegurando el cumplimiento estricto del Real Decreto 742/2013.
+                        Realizamos controles periódicos y analíticas especializadas para evaluar la <strong>seguridad sanitaria</strong> de tu instalación y los requisitos aplicables del Real Decreto 742/2013.
                     </p>
                     <p className="text-blue-200 mt-4 font-semibold">
                         Servicio activo en <strong>Manilva, Estepona, Sotogrande y Marbella</strong>.
@@ -51,7 +55,7 @@ export default function AnalisisPiscinas() {
                         <div className="lg:w-1/2 order-2 lg:order-1">
                             <h2 className="text-3xl font-bold text-slate-900 mb-6">Máximo Control y Cumplimiento Normativo</h2>
                             <p className="text-slate-900 mb-4 leading-relaxed">
-                                En GADYT trabajamos en constante coordinación con laboratorios acreditados para ofrecer unos resultados precisos y rápidos. Realizar análisis periódicos del agua de tu piscina o spa no solo es una obligación legal según el <strong>Real Decreto 742/2013</strong>, sino que es fundamental para prevenir brotes víricos y bacterianos, garantizando así la salud de los bañistas.
+                                En GADYT trabajamos en coordinación con laboratorios acreditados para ofrecer resultados fiables. La frecuencia y el alcance de los controles dependen del tipo de piscina y de los requisitos aplicables del <strong>Real Decreto 742/2013</strong>; además, el seguimiento permite detectar desviaciones que podrían afectar a la salud de los bañistas.
                             </p>
                             <p className="text-slate-900 mb-6 leading-relaxed">
                                 Evaluamos parámetros críticos tanto *in situ* como en el laboratorio, asegurando que los niveles de desinfectante (cloro libre y combinado, o bromo), pH, turbidez, ácido isocianúrico y microbiología general (incluyendo *E. coli* y *Pseudomonas aeruginosa*) se mantengan siempre en valores óptimos.
@@ -64,7 +68,7 @@ export default function AnalisisPiscinas() {
                             <ul className="space-y-4 mb-8 text-slate-900">
                                 <li className="flex items-start">
                                     <svg className="w-5 h-5 text-blue-600 mr-3 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                                    <span><strong>Toma de Muestras Oficial:</strong> Técnicos cualificados realizan la recogida de muestras en condiciones de absoluta esterilidad y manteniendo la cadena de frío.</span>
+                                    <span><strong>Toma de muestras trazable:</strong> Técnicos cualificados realizan la recogida con procedimientos adecuados y mantienen la cadena de frío.</span>
                                 </li>
                                 <li className="flex items-start">
                                     <svg className="w-5 h-5 text-blue-600 mr-3 mt-1 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
@@ -87,9 +91,10 @@ export default function AnalisisPiscinas() {
                         <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full lg:sticky lg:top-24">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/piscina1.png"
+                                    src="/images/real/piscina1.webp"
                                     alt="Laboratorio: Análisis de agua de piscina"
                                     fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     className="object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
@@ -101,6 +106,21 @@ export default function AnalisisPiscinas() {
                     </div>
                 </div>
             </section>
+
+            <RelatedServices
+                services={[
+                    {
+                        name: "Control de Legionella",
+                        description: "Planes preventivos, revisiones y control analítico para instalaciones con riesgo sanitario.",
+                        href: "/servicios/control-legionella",
+                    },
+                    {
+                        name: "Gestión integral del agua",
+                        description: "Mantenimiento técnico y seguimiento continuado de instalaciones hidráulicas.",
+                        href: "/servicios/gestion-del-agua",
+                    },
+                ]}
+            />
 
             <ServiceAccordion
                 heading="Preguntas Frecuentes de Análisis de Piscinas"

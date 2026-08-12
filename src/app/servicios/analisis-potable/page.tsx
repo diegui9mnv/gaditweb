@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Metadata } from "next";
 import ServiceAccordion from "@/components/services/ServiceAccordion";
+import RelatedServices from "@/components/services/RelatedServices";
+import Breadcrumbs from "@/components/seo/Breadcrumbs";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-    title: "Análisis de Agua Potable y Consumo Humano (RD 3/2023) | GADYT",
+export const metadata = createPageMetadata({
+    title: "Análisis de Agua Potable y Consumo Humano",
     description:
         "Análisis de agua potable en Manilva, Estepona, Sotogrande y Marbella para comunidades, pozos y aljibes, cumpliendo el RD 3/2023.",
-};
+    path: "/servicios/analisis-potable",
+});
 
 const potableFaq = [
     {
@@ -33,6 +36,7 @@ export default function AnalisisPotable() {
             <section className="bg-slate-900 py-14 md:py-20 text-white relative">
                 <div className="absolute inset-0 bg-green-900/30 z-0"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                    <Breadcrumbs current={{ name: "Análisis de Agua Potable", path: "/servicios/analisis-potable" }} />
                     <h1 className="text-4xl md:text-5xl font-extrabold mb-4">
                         Análisis de Agua Potable
                     </h1>
@@ -87,9 +91,10 @@ export default function AnalisisPotable() {
                         <div className="lg:w-1/2 order-1 lg:order-2 mb-6 lg:mb-0 w-full lg:sticky lg:top-24">
                             <div className="relative rounded-2xl overflow-hidden shadow-2xl aspect-[4/3] bg-slate-100">
                                 <Image
-                                    src="/images/real/potable1.png"
+                                    src="/images/real/potable1.webp"
                                     alt="Muestreo de Agua Potable"
                                     fill
+                                    sizes="(max-width: 1024px) 100vw, 50vw"
                                     className="object-cover"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/40 to-transparent"></div>
@@ -101,6 +106,21 @@ export default function AnalisisPotable() {
                     </div>
                 </div>
             </section>
+
+            <RelatedServices
+                services={[
+                    {
+                        name: "Limpieza de aljibes",
+                        description: "Higienización profesional de depósitos para conservar unas condiciones adecuadas del agua.",
+                        href: "/servicios/limpieza-aljibes",
+                    },
+                    {
+                        name: "Desinfección de tuberías y redes",
+                        description: "Tratamiento técnico de redes nuevas o existentes y documentación de la actuación.",
+                        href: "/servicios/desinfecciones",
+                    },
+                ]}
+            />
 
             <ServiceAccordion
                 heading="Preguntas Frecuentes de Análisis de Agua Potable"

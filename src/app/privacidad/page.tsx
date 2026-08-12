@@ -1,10 +1,11 @@
-import { Metadata } from "next";
+import { createPageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Política de Privacidad | GADYT",
+export const metadata = createPageMetadata({
+  title: "Política de Privacidad",
   description:
     "Información sobre el tratamiento de datos personales en gadyt.es, de acuerdo con el RGPD y la LOPDGDD.",
-};
+  path: "/privacidad",
+});
 
 export default function PrivacidadPage() {
   return (

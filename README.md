@@ -60,5 +60,8 @@ Parámetros enviados al template:
 
 - `public/robots.txt`
 - `public/sitemap.xml`
+- `src/lib/seo.ts` centraliza canonical, Open Graph y Twitter Cards de las páginas internas.
+- `src/components/seo/LocalBusinessJsonLd.tsx` publica los datos estructurados de empresa local.
+- `src/components/seo/Breadcrumbs.tsx` añade navegación y `BreadcrumbList` en servicios y normativa.
 
-El sitemap incluye home, servicios, contacto, normativa y páginas legales.
+El dominio canónico es `https://www.gadyt.es`. El sitemap incluye home, servicios, contacto, normativa y páginas legales. Al crear una ruta pública, añade su metadata con `createPageMetadata` y actualiza también el sitemap.

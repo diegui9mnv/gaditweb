@@ -1,6 +1,12 @@
 "use client";
 
 import React, { useState } from "react";
+import {
+    INSTAGRAM_URL,
+    PHONE_DISPLAY,
+    PHONE_HREF,
+    WHATSAPP_URL,
+} from "@/lib/contact";
 
 const EMAILJS_ENDPOINT = "https://api.emailjs.com/api/v1.0/email/send";
 
@@ -68,6 +74,7 @@ export default function Contacto() {
             const serviceLabels: Record<string, string> = {
                 legionella: "Control y Prevención de Legionella",
                 desinfeccion: "Desinfecciones Técnicas",
+                lpo: "Certificaciones LPO",
                 aljibes: "Mantenimiento de Aljibes",
                 analitica: "Análisis de Agua (Piscinas, Potable)",
                 consultoria: "Consultoría Técnica Normativa",
@@ -180,7 +187,7 @@ export default function Contacto() {
                                 </div>
                                 <div>
                                     <p className="font-semibold text-slate-900 leading-tight mb-1">Teléfono</p>
-                                    <a href="tel:+34667752702" className="text-slate-700 text-sm hover:text-blue-600 font-medium">667 752 702</a>
+                                    <a href={PHONE_HREF} className="text-slate-700 text-sm hover:text-blue-600 font-medium">{PHONE_DISPLAY}</a>
                                 </div>
                             </li>
                             <li className="flex items-start">
@@ -190,6 +197,24 @@ export default function Contacto() {
                                 <div>
                                     <p className="font-semibold text-slate-900 leading-tight mb-1">Correo Electrónico</p>
                                     <a href="mailto:contacto@gadyt.es" className="text-slate-700 text-sm hover:text-blue-600 font-medium">contacto@gadyt.es</a>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <div className="bg-green-50 p-3 rounded-full mr-4 text-green-600">
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 11.5a8 8 0 01-11.8 7L4 20l1.5-4.1A8 8 0 1120 11.5z" /></svg>
+                                </div>
+                                <div>
+                                    <p className="font-semibold text-slate-900 leading-tight mb-1">WhatsApp</p>
+                                    <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="text-green-700 text-sm hover:text-green-800 font-medium">Abrir conversación</a>
+                                </div>
+                            </li>
+                            <li className="flex items-start">
+                                <div className="bg-pink-50 p-3 rounded-full mr-4 text-pink-600">
+                                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" strokeWidth="2" /><circle cx="12" cy="12" r="4" strokeWidth="2" /><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none" /></svg>
+                                </div>
+                                <div>
+                                    <p className="font-semibold text-slate-900 leading-tight mb-1">Instagram</p>
+                                    <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" className="text-slate-700 text-sm hover:text-pink-600 font-medium">@gadyt_</a>
                                 </div>
                             </li>
                         </ul>
@@ -210,7 +235,7 @@ export default function Contacto() {
                                 <svg className="w-5 h-5 shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                                 <div>
                                     <p className="font-bold mb-1">Error al enviar el mensaje</p>
-                                    <p>Hubo un problema al enviar el correo. Por favor, revisa tu conexión o contáctanos por teléfono/email mientras lo solucionamos.</p>
+                                    <p>Hubo un problema al enviar el correo. Por favor, revisa tu conexión o contáctanos por teléfono o WhatsApp mientras lo solucionamos.</p>
                                 </div>
                             </div>
                         )}
@@ -249,6 +274,7 @@ export default function Contacto() {
                                     <option value="">Selecciona un servicio</option>
                                     <option value="legionella">Control y Prevención de Legionella</option>
                                     <option value="desinfeccion">Desinfecciones Técnicas</option>
+                                    <option value="lpo">Certificaciones LPO</option>
                                     <option value="aljibes">Mantenimiento de Aljibes</option>
                                     <option value="analitica">Análisis de Agua (Piscinas, Potable)</option>
                                     <option value="consultoria">Consultoría Técnica Normativa</option>

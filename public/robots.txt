@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gadyt.es/sitemap.xml
+Sitemap: https://www.gadyt.es/sitemap.xml

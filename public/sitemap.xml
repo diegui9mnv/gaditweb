@@ -1,58 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://gadyt.es/</loc>
-    <priority>1.0</priority>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.gadyt.es/</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/servicios/control-legionella</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/control-legionella</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/servicios/desinfecciones</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/desinfecciones</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/servicios/gestion-del-agua</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/certificaciones-lpo</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/servicios/limpieza-aljibes</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/gestion-del-agua</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/servicios/analisis-piscinas</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/limpieza-aljibes</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/servicios/analisis-potable</loc>
-    <priority>0.8</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/analisis-piscinas</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/normativa</loc>
-    <priority>0.5</priority>
-    <changefreq>monthly</changefreq>
+    <loc>https://www.gadyt.es/servicios/analisis-potable</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/contacto</loc>
-    <priority>0.5</priority>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.gadyt.es/normativa</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/privacidad</loc>
-    <priority>0.3</priority>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.gadyt.es/contacto</loc>
   </url>
   <url>
-    <loc>https://gadyt.es/legal</loc>
-    <priority>0.3</priority>
-    <changefreq>yearly</changefreq>
+    <loc>https://www.gadyt.es/privacidad</loc>
+  </url>
+  <url>
+    <loc>https://www.gadyt.es/legal</loc>
   </url>
 </urlset>

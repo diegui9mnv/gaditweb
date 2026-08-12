@@ -1,28 +1,28 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
+import localFont from "next/font/local";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import MobileQuickNav from "@/components/layout/MobileQuickNav";
+import LocalBusinessJsonLd from "@/components/seo/LocalBusinessJsonLd";
+import { HOME_TITLE, SITE_DESCRIPTION, SITE_NAME, SITE_URL } from "@/lib/seo";
+import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const inter = localFont({
+  src: "./fonts/inter-latin-variable.woff2",
+  display: "swap",
+  style: "normal",
+  weight: "100 900",
+  fallback: ["Arial", "sans-serif"],
+});
 
 export const metadata: Metadata = {
-  title: "GADYT | Especialistas en Control de Legionella y Tratamiento de Agua",
-  description: "Prevención de Legionella bajo RD 487/2022 y RD 614/2024. Gestión integral del agua, desinfección y analíticas en Málaga y Andalucía. ROESBA 1380-AND-750.",
-  keywords: [
-    "Plan de prevención de Legionella 2026",
-    "control legionella Marbella",
-    "control legionella Estepona",
-    "desinfecciones de agua Manilva",
-    "desinfeccion de piscinas Estepona",
-    "limpieza de algibes Estepona",
-    "Sotogrande",
-    "Real Decreto 487/2022",
-    "gestión del agua",
-    "Málaga",
-    "Andalucía"
-  ],
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: `${SITE_NAME} | ${HOME_TITLE}`,
+    template: "%s | GADYT",
+  },
+  description: SITE_DESCRIPTION,
+  applicationName: SITE_NAME,
 };
 
 export default function RootLayout({
@@ -35,6 +35,7 @@ export default function RootLayout({
       <body
         className={`${inter.className} antialiased bg-slate-50 text-slate-900 min-h-screen flex flex-col`}
       >
+        <LocalBusinessJsonLd />
         <Navbar />
         <main className="flex-grow pt-16 md:pt-20 pb-20 md:pb-0">
           {children}
