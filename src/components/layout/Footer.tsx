@@ -18,7 +18,7 @@ export default function Footer() {
                             <Image src="/assets/logo-gadyt.jpg" alt="GADYT Logo" width={160} height={52} className="object-contain" />
                         </Link>
                         <p className="text-sm text-slate-400 mb-4">
-                            Gestión integral del agua, desinfección y tratamiento. Especialistas en prevención de Legionella y cumplimiento normativo.
+                            Gestión integral del agua, desinfección y mantenimiento profesional. Especialistas en prevención de Legionella y cuidado de instalaciones.
                         </p>
                         <div className="text-xs bg-slate-800 inline-block px-3 py-1 rounded-full text-slate-300 border border-slate-700">
                             ROESBA Nº 1380-AND-750
@@ -62,6 +62,7 @@ export default function Footer() {
                             <li><Link href="/servicios/certificaciones-lpo" className="hover:text-blue-400 transition-colors">Certificaciones LPO</Link></li>
                             <li><Link href="/servicios/limpieza-aljibes" className="hover:text-blue-400 transition-colors">Limpieza de Aljibes</Link></li>
                             <li><Link href="/servicios/gestion-del-agua" className="hover:text-blue-400 transition-colors">Gestión del Agua</Link></li>
+                            <li><Link href="/servicios/limpieza-placas-solares" className="hover:text-blue-400 transition-colors">Limpieza de Placas Solares</Link></li>
                             <li><Link href="/servicios/analisis-piscinas" className="hover:text-blue-400 transition-colors">Análisis de Piscinas</Link></li>
                             <li><Link href="/servicios/analisis-potable" className="hover:text-blue-400 transition-colors">Análisis de Agua Potable</Link></li>
                         </ul>

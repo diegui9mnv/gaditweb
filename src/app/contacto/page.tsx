@@ -76,6 +76,7 @@ export default function Contacto() {
                 desinfeccion: "Desinfecciones Técnicas",
                 lpo: "Certificaciones LPO",
                 aljibes: "Mantenimiento de Aljibes",
+                solar: "Limpieza de Placas Solares",
                 analitica: "Análisis de Agua (Piscinas, Potable)",
                 consultoria: "Consultoría Técnica Normativa",
                 otro: "Otro",
@@ -276,6 +277,7 @@ export default function Contacto() {
                                     <option value="desinfeccion">Desinfecciones Técnicas</option>
                                     <option value="lpo">Certificaciones LPO</option>
                                     <option value="aljibes">Mantenimiento de Aljibes</option>
+                                    <option value="solar">Limpieza de Placas Solares</option>
                                     <option value="analitica">Análisis de Agua (Piscinas, Potable)</option>
                                     <option value="consultoria">Consultoría Técnica Normativa</option>
                                     <option value="otro">Otro</option>

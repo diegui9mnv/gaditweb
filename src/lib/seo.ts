@@ -4,7 +4,7 @@ export const SITE_NAME = "GADYT";
 export const SITE_URL = "https://www.gadyt.es";
 export const HOME_TITLE = "Control de Legionella y Tratamiento de Agua";
 export const SITE_DESCRIPTION =
-  "GADYT ofrece control de Legionella, gestión integral del agua, desinfecciones, limpieza de aljibes y análisis de agua en la Costa del Sol y Andalucía.";
+  "GADYT ofrece control de Legionella, gestión del agua, desinfecciones, limpieza de aljibes y placas solares en la Costa del Sol y Andalucía.";
 
 const SOCIAL_IMAGE = {
   url: "/assets/og-gadyt.webp",

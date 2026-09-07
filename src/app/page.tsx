@@ -246,7 +246,7 @@ export default function Home() {
           <div className="text-center max-w-3xl mx-auto mb-10 md:mb-16">
             <h2 className="text-3xl font-bold text-slate-900 mb-4">Nuestros Servicios Especializados</h2>
             <p className="text-slate-600">
-              Ofrecemos soluciones técnicas y sanitarias avanzadas para el control del agua y superficies. Cubrimos las necesidades de comunidades, hoteles, industria y promociones de obra nueva.
+              Ofrecemos soluciones técnicas de higiene, mantenimiento y control del agua. Cubrimos las necesidades de viviendas, comunidades, hoteles, industria y promociones de obra nueva.
             </p>
           </div>
 
@@ -362,6 +362,18 @@ export default function Home() {
               <p className="mt-2 max-w-3xl text-slate-600">Desinfectamos la red de agua de promociones y documentamos la actuación para el expediente de primera ocupación cuando corresponda.</p>
             </div>
             <span className="shrink-0 font-bold text-teal-700 transition-transform group-hover:translate-x-1">Ver servicio →</span>
+          </Link>
+
+          <Link
+            href="/servicios/limpieza-placas-solares"
+            className="group mx-auto mt-5 flex max-w-5xl flex-col items-start justify-between gap-5 rounded-2xl border border-amber-200 bg-amber-50 p-6 transition-all hover:border-amber-300 hover:shadow-lg sm:flex-row sm:items-center md:p-8"
+          >
+            <div>
+              <span className="text-xs font-bold uppercase tracking-wider text-amber-700">Viviendas, comunidades y empresas</span>
+              <h3 className="mt-2 text-2xl font-bold text-slate-900">Limpieza profesional de placas solares</h3>
+              <p className="mt-2 max-w-3xl text-slate-600">Retiramos polvo, polen y otros residuos con un procedimiento cuidadoso para ayudar a mantener el buen rendimiento de tu instalación.</p>
+            </div>
+            <span className="shrink-0 font-bold text-amber-700 transition-transform group-hover:translate-x-1">Ver servicio →</span>
           </Link>
         </div>
       </section>

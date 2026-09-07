@@ -24,6 +24,10 @@ const services = [
     path: "/servicios/limpieza-aljibes",
   },
   {
+    name: "Limpieza profesional de placas solares",
+    path: "/servicios/limpieza-placas-solares",
+  },
+  {
     name: "Análisis de agua en piscinas",
     path: "/servicios/analisis-piscinas",
   },

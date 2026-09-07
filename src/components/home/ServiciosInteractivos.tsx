@@ -71,6 +71,20 @@ const servicios: Servicio[] = [
     ],
   },
   {
+    id: "solar",
+    titulo: "Limpieza de Placas Solares",
+    gancho: "Más luz, mejor cuidado",
+    resumen:
+      "Retiramos polvo, polen, excrementos de aves y otros residuos mediante un procedimiento cuidadoso y adaptado a cada instalación fotovoltaica.",
+    url: "/servicios/limpieza-placas-solares",
+    cta: "Ver limpieza solar",
+    bullets: [
+      "Métodos apropiados para paneles fotovoltaicos.",
+      "Servicio para viviendas, comunidades y empresas.",
+      "Cobertura en Manilva, Sotogrande, Estepona y Marbella.",
+    ],
+  },
+  {
     id: "analitica",
     titulo: "Análisis de Agua",
     gancho: "Datos claros, decisiones rápidas",
